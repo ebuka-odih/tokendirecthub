@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-        Blade::directive('convert', function ($money) {
+        Blade::directive('money', function ($money) {
             return "<?php echo number_format($money, 2); ?>";
         });
     }

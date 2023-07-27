@@ -38,7 +38,6 @@ class CreateUsersTable extends Migration
             $table->string('avatar')->nullable();
             $table->string('type')->nullable();
 
-
             $table->double('balance')->nullable();
             $table->double('profit')->nullable();
             $table->double('signal_fee')->nullable();

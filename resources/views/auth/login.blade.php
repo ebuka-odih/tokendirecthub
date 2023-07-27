@@ -19,9 +19,9 @@
 
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-    <meta name="description" content="Whirl Wind Invts - Login to Dashboard">
-    <meta name="author" content="Whirl Wind Invts - Login to Dashboard">
-    <meta name="keywords" content="Whirl Wind Invts - Login to Dashboard">
+    <meta name="description" content="{{ env('APP_NAME') }} - Login to Dashboard">
+    <meta name="author" content="{{ env('APP_NAME') }} - Login to Dashboard">
+    <meta name="keywords" content="{{ env('APP_NAME') }} - Login to Dashboard">
 
     <!-- Favicon -->
     <link rel="icon" href="main/assets/img/brand/favicon.ico" type="image/x-icon"/>
