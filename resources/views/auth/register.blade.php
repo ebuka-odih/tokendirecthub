@@ -465,7 +465,7 @@
 
                                     </form>
                                     <div class="text-start mt-4 ms-0 mb-3">
-                                        <p class="mb-0">Already have an account? <a href="login.php">Sign In</a></p>
+                                        <p class="mb-0">Already have an account? <a href="{{ route('login') }}">Sign In</a></p>
                                     </div>
 
                                 </div>
