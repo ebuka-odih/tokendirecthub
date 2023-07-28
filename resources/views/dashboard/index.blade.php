@@ -1,7 +1,7 @@
 @extends('dashboard.layout.app')
 @section('content')
-    <br><br><br>
-<div style="margin-top: 50px" class="main-container container-fluid">
+
+<div  class="main-container container-fluid">
     <div class="inner-body">
         <div id="mobileshow" class="see"></div>
         <div class="sees hide-mobile"></div>
@@ -119,7 +119,7 @@
 
                         <ul id="mobileshow" class="tabs-menu nav mb-0">
                             <li class="">
-                                <a href="#tab20" data-bs-toggle="tab" class="active btn btn-info">Deposit</a> &nbsp; &nbsp;
+                                <a href="{{ route('user.deposit') }}"  class="active btn btn-info">Deposit</a> &nbsp; &nbsp;
                                 <a href="#tab21" data-bs-toggle="tab" class="btn ripple btn-dark-transparent">Withdraw</a>
 
                         </ul>
@@ -137,7 +137,7 @@
                                                         <td>$ 0.00 BTC</td>
                                                         <td><span id="btc-balance"></span></td>
                                                         <td>
-                                                            <a href="#" data-bs-target="#depositmodal" data-bs-toggle="modal" class="btn ripple btn-primary-transparent">Deposit</a>
+                                                            <a href="{{ route('user.deposit') }}"  class="btn ripple btn-primary-transparent">Deposit</a>
                                                             <a href="withdrawal.php" class="btn ripple btn-dark-transparent">Withdraw</a>
                                                         </td>
                                                     </tr>
@@ -148,7 +148,7 @@
                                                         <td><span id="eth-balance-eq"></span>$ 0.00 ETH</td>
                                                         <td><span id="eth-balance"></span></td>
                                                         <td>
-                                                            <a href="#"  data-bs-target="#depositmodal" data-bs-toggle="modal" class="btn ripple btn-primary-transparent">Deposit</a>
+                                                            <a href="{{ route('user.deposit') }}"   class="btn ripple btn-primary-transparent">Deposit</a>
                                                             <a href="withdrawal.php" class="btn ripple btn-dark-transparent">Withdraw</a>
                                                         </td>
                                                     </tr>
@@ -736,7 +736,7 @@
                                                 <span class="text-dark tx-bold-12"> Total Deposits</span>
                                                 <h5 class="text-muted tx-bold-12"> $ 0.00</h5></div>
                                             <div class="ms-auto fs-14 text-danger font-weight-normal">
-                                                <a href="deposit.php" class="btn ripple btn-warning-transparent">Deposit</a>
+                                                <a href="{{ route('user.deposit') }}" class="btn ripple btn-warning-transparent">Deposit</a>
                                             </div>
                                         </div>
 

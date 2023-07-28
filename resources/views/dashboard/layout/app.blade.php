@@ -165,7 +165,7 @@
         <div class="main-menu main-sidebar main-sidebar-sticky side-menu">
             <div class="main-sidebar-header main-container-1 active">
                 <div class="sidemenu-logo">
-                    <a class="main-logo" href="index.php">
+                    <a class="main-logo" href="{{ route('user.dashboard') }}">
                         <img src="../logo.png" class="header-brand-img desktop-logo-dark" alt="logo">
                         <img src="../main/assets/img/brand/icon-light.png" class="header-brand-img icon-logo-dark" alt="logo">
                         <img src="../logo.png" class="header-brand-img desktop-logo" alt="logo">
@@ -176,7 +176,7 @@
                     <div class="slide-left disabled" id="slide-left"><svg xmlns="http://www.w3.org/2000/svg" fill="#c9bebe" width="24" height="24" viewBox="0 0 24 24"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"/></svg></div>
                     <ul class="menu-nav nav sidebar-active">
                         <li class="nav-item active">
-                            <a class="nav-link with-sub" href="index.php">
+                            <a class="nav-link with-sub" href="{{ route('user.dashboard') }}">
                                 <svg class="sidemenu-icon menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg>
                                 <span class="sidemenu-label">Dashboards</span>
                             </a>
@@ -336,9 +336,11 @@
 
     </style>
     <!-- Main Content-->
-    <div class="main-content side-content pt-0">
+    <div  class="main-content side-content pt-0">
 
         @yield('content')
+        <br><br><br> <br><br> <br><br><br><br><br><br>
+        <div style="margin-top: 80px"></div>
 
         <script src="{{ asset('js/jquery.min.js') }}"></script>
 
@@ -410,14 +412,12 @@
 
 
 
-
-
         <!-- Main Footer-->
         <div class="main-footer text-center">
             <div class="container">
                 <div class="row row-sm">
                     <div class="col-md-12">
-                        <span>Copyright © 2022.  All rights reserved.</span>
+                        <span>Copyright © {{ Date('Y') }} {{ env('APP_NAME') }}.  All rights reserved.</span>
                     </div>
                 </div>
             </div>

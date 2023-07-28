@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Mail;
 
 class DepositController extends Controller
 {
+    public function deposit()
+    {
+        $wallets = PaymentMethod::all();
+        return view('dashboard.deposit.deposit', compact('wallets'));
+    }
     public function transactions()
     {
         $count = Deposit::whereUserId(\auth()->id())->where('status', 0)->count();
@@ -24,11 +29,7 @@ class DepositController extends Controller
         $deposits = Deposit::whereUserId(\auth()->id())->where('status', '<=', 0)->latest()->paginate(6);
         return view('dashboard.deposit.pending-deposits', compact('deposits', 'count'));
     }
-    public function deposit()
-    {
-        $wallets = PaymentMethod::all();
-        return view('dashboard.transactions.fund', compact('wallets'));
-    }
+
 
     public function processDeposit(Request $request)
     {
@@ -38,14 +39,14 @@ class DepositController extends Controller
         ]);
 
         $deposit = new Deposit();
-        
+
         $deposit->user_id = Auth::id();
         $deposit->amount = $request->amount;
         $deposit->payment_method_id = $request->payment_method_id;
         $deposit->save();
         Mail::to($deposit->user->email)->send(new DepositAlert($deposit));
         return redirect()->route('user.payment', $deposit->id);
-       
+
     }
 
     public function payment($id)
