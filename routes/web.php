@@ -31,6 +31,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], function(){
 
     Route::get('dashboard', "UserController@dashboard")->name('dashboard');
+    Route::get('assets', "UserController@assets")->name('assets');
     Route::get('account/details', "UserController@wallet")->name('wallet');
     Route::get('referrals', "UserController@all_referrals")->name('all_referrals');
     Route::get('profile', 'UserController@profile')->name('profile');
@@ -52,7 +53,6 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
 
     //  Deposits Routes
     Route::get('deposit/transactions', "DepositController@transactions")->name('deposit.transactions');
-    Route::get('pending/transactions', "DepositController@pendingTransactions")->name('pendingTransactions');
     Route::get('deposit', "DepositController@deposit")->name('deposit');
     Route::post('process/deposit', "DepositController@processDeposit")->name('processDeposit');
     Route::get('deposit/payment/QH5H3Q64{id}2GER', "DepositController@payment")->name('payment');

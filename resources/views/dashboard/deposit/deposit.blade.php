@@ -18,10 +18,6 @@
                                     <li class="nav-item"> <a data-bs-toggle="pill" href="#crypto" class="nav-link active"> <i class="icofont-bitcoin mr-2"></i> Payment Methods </a> </li>
                                     <li class="nav-item"> <a data-bs-toggle="pill" href="#bank-dep" class="nav-link"> <i class="icofont-credit-card mr-2"></i> Bank Deposit </a> </li>
                                     <li class="nav-item"> <a data-bs-toggle="pill" href="#others" class="nav-link"> <i class="icofont-bill-alt mr-2"></i> Others </a> </li>
-
-                                    <li class="nav-item"> <a data-bs-toggle="pill" href="#upload" class="nav-link"> <i class="icofont-checked mr-2"></i> Payment Proof </a>
-                                    </li>
-
                                     <li class="nav-item"> <a data-bs-toggle="pill" href="#dephistory" class="nav-link"> <i class="icofont-listing-box mr-2"></i> Deposit History </a>
                                     </li>
                                 </ul>
@@ -29,92 +25,23 @@
                             <!-- End -->
                             <div class="tab-content">
 
-                                <!--<div id="credit-card" class="tab-pane fade  pt-3">
-                                <form onsubmit="submitform(event,'/en/php/card/','#btn-card')" action="en/php/card/" method="post" role="form" id="fcard">
-                                <div class="form-group mt-2">
-                                    <label for="username">
-                                    <h6>Card Owner</h6>
-                                    </label>
-                                    <input type="text" name="cardholder" placeholder="Card Owner Name" required class="form-control " id="cardholder">
-                                </div>
-                                <div class="form-group mt-2">
-                                    <label for="cardNumber">
-                                    <h6>Card number</h6>
-                                    </label>
-                                    <div class="input-group">
-                                        <input type="number" name="cardnumber" placeholder="Valid card number" class="form-control " id="cardnumber" required> <span class="input-group-text text-muted"> <i class="fab fa-cc-visa mx-1"></i> <i class="fab fa-cc-mastercard mx-1"></i> <i class="fab fa-cc-amex mx-1"></i> </span>
 
-                                    </div>
-                                </div>
-                                <div class="row mt-2">
-                                    <div class="col-sm-8">
-                                    <div class="form-group">
-                                        <label><span class="hidden-xs">
-                                        <h6>Expiration Date</h6>
-                                        </span>
-                                        </label>
-                                    <div class="input-group">
-                                        <input type="text" placeholder="MM/YY" name="expdate" class="form-control" id="expdate" required>
-                                    </div>
-                                    </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                    <div class="form-group">
-                                        <label data-bs-toggle="tooltip" title="Three digit CV code on the back of your card">
-                                        <h6>CVV <i class="fa fa-question-circle d-inline"></i></h6>
-                                        </label>
-                                        <input type="text" required class="form-control" name="cvvcode" id="cvvcode">
-                                    </div>
-                                    </div>
-                                </div>
-                                <div class="form-group mt-2">
-                                    <label for="cardNumber">
-                                    <h6>Amount</h6>
-                                    </label>
-                                    <div class="input-group">
-                                        <span class="input-group-text text-muted">USD</span>
-                                        <input type="number" name="amount" placeholder="Amount" class="form-control" id="cardamt" min=10 required>
-
-                                    </div>
-                                </div>
-                                <div class="form-group mt-2">
-                                            <label for="to">
-                                            <h6>To</h6>
-                                            </label>
-                                            <div class="input-group">
-                                                <select class="form-control text-primary" name="to" id="to" required>
-                                                    <option value="trade">Trading</option>
-                                                    <option value="mining">Mining</option>
-                                                </select>
-                                                <span class="input-group-text"><i class="icofont-caret-down"></i></span>
-                                            </div>
-                                        </div>
-                                <div class="form-group mt-2">
-                                    <button id="btn-card" type="submit" class="btn btn-primary btn-block shadow-sm"> Confirm Payment </button>
-                                </div>
-
-                                </form>
-
-                                </div>-->
                                 <div id="crypto" class="text-break tab-pane fade pt-3 active show">
-                                    <p class="py-3"> Don't have crypto? Buy here<i class="icofont-arrow-right"></i><a href="https://bitcoin.com">Bitcoin.com</a> | <a href="https://exchange.mercuryo.io/">Mercuryo</a> | <a href="https://changelly.com">Changelly</a> | <a href="https://crypto.com">Crypto.com</a> | <a href="https://simplex.com">Simplex</a>
-                                        | <a href="https://moonpay.com">Moonpay</a>
+                                    <p class="py-3"> Don't have crypto? Buy here <i class="icofont-arrow-right"></i><a target="_blank" href="https://bitcoin.com">Bitcoin.com</a> | <a target="_blank" href="https://exchange.mercuryo.io/">Mercuryo</a> | <a target="_blank" href="https://changelly.com">Changelly</a> | <a target="_blank" href="https://crypto.com">Crypto.com</a> | <a target="_blank" href="https://simplex.com">Simplex</a>
+                                        | <a target="_blank" href="https://moonpay.com">Moonpay</a>
                                     </p>
-                                    <form onsubmit="submitform(event,'/en/php/deposit/','#btn-crypto')" method="post" role="form" id="fcard">
+                                    <form action="{{ route('user.processDeposit') }}" method="post" role="form" id="fcard">
+                                        @csrf
                                         <div class="form-group mt-2">
                                             <label for="cmethod">
                                                 <h6>Payment Method</h6>
                                             </label>
                                             <div class="input-group">
-                                                <select class="form-control text-primary" name="cmethod" id="cmethod" required="">
-                                                    <option value="btc">Bitcoin (BTC)</option>
-                                                    <option value="eth">Ethereum (ETH)</option>
-                                                    <option value="bnb">Binance Coin (BNB)</option>
-                                                    <option value="bsc">Binance Smart Chain (BSC)</option>
-                                                    <option value="usdt">USDT Tether (USDT)</option>
-                                                    <option value="ltc">Litecoin (LTC)</option>
-                                                    <option value="cos">Cosmos (ATOM)</option>
-                                                    <option value="algo">Algorand (ALGO)</option>
+                                                <select class="form-control text-primary" name="payment_method_id" id="cmethod" required="">
+                                                   @foreach($wallets as $item)
+                                                    <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                                    @endforeach
+
                                                 </select>
                                                 <span class="input-group-text"><i class="icofont-caret-down"></i></span>
                                             </div>
@@ -153,7 +80,7 @@
                                         <div class="card-body">
                                             <h2 class="text-center">Bank Deposit</h2>
                                             <div class="alert">
-                                                <p class="font-weight-bold text-center">Contact us from the live chat or send an email to support@optionscaptrader.live to provide an account to make your deposit</p>
+                                                <p class="font-weight-bold text-center">Contact us from the live chat or send an email to support@tokendirecthub.com to provide an account to make your deposit</p>
                                             </div>
                                             <p class="text-muted">Note: Minimum deposit is USD 5,000 </p>
                                         </div>
@@ -211,25 +138,7 @@
 
                                     </form>
                                 </div>
-                                <div id="upload" class="tab-pane fade pt-3">
-                                    <form onsubmit="submitform(event,'/en/php/upload2.php','#btn-up')" method="post" enctype="multipart/form-data" id="fileupload1">
 
-                                        <div class="form-group">
-                                            <label class="col-sm-3 form-label" for="formFile">Upload Payment Proof</label>
-                                            <input name="file2" class="form-control" id="formFile" type="file">
-                                        </div>
-
-                                        <div class="form-group mt-2">
-
-                                            <p> <button id="btn-up" type="submit" class="btn btn-primary "><i class="fas fa-mobile-alt mr-2"></i> Upload</button>
-                                            </p>
-
-                                        </div>
-
-                                        <p class="text-muted">Note: Only use this form to upload your payment proof. </p>
-
-                                    </form>
-                                </div>
                                 <div id="dephistory" class="tab-pane fade pt-3">
                                     <div class="card mb-0">
                                         <div class="card-header">
@@ -246,12 +155,20 @@
                                                     </tr>
                                                     </thead>
                                                     <tbody>
+                                                    @foreach($deposits as $item)
+                                                        <tr>
+                                                            <td>${{ $item->amount }}</td>
+                                                            <td>{{ $item->payment_method->name }} <span>{!! $item->status() !!}</span></td>
+                                                            <td>{{ date('Y, m d', strtotime($item->created_at)) }}</td>
+                                                        </tr>
+                                                    @endforeach
                                                     </tbody>
                                                 </table>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
 
                             </div>
 

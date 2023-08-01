@@ -20,6 +20,8 @@ class CreateDepositsTable extends Migration
             $table->double('amount')->nullable();
             $table->integer('status')->default(0);
             $table->string('reference')->nullable();
+            $table->string('to')->nullable();
+            $table->string('other_method')->nullable();
             $table->bigInteger('payment_method_id');
         });
     }

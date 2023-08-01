@@ -178,6 +178,12 @@
                             <span class="nav-main-link-name">Invest Package</span>
                         </a>
                     </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link "  href="{{ route('admin.copy-traders.index') }}">
+                            <i class="nav-main-link-icon fa fa-chart-area"></i>
+                            <span class="nav-main-link-name">Copy Traders</span>
+                        </a>
+                    </li>
 
                     <li class="nav-main-heading">User</li>
                     <li class="nav-main-item">

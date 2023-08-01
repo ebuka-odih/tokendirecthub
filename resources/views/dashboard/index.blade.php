@@ -1,7 +1,7 @@
 @extends('dashboard.layout.app')
 @section('content')
 
-<div  class="main-container container-fluid">
+<div style="margin-top: 100px"  class="main-container container-fluid">
     <div class="inner-body">
         <div id="mobileshow" class="see"></div>
         <div class="sees hide-mobile"></div>

@@ -207,7 +207,7 @@
                                 </li>-->
 
                         <li class="nav-item ">
-                            <a class="nav-link with-sub " href="deposit.php">
+                            <a class="nav-link with-sub " href="{{ route('user.deposit') }}">
                                 <svg class="sidemenu-icon menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM232 344V280H168c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H280v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></svg>
                                 <span class="sidemenu-label">Deposit</span>
                             </a>
@@ -368,7 +368,7 @@
                         <br>
                         <div class="text-wrap">
                             <div class="example">
-                                <a href="deposit.php">
+                                <a href="{{ route('user.deposit') }}">
                                     <p class="btn ripple btn-success-transparent">Live</p> <font color="teal"><strong>Live Account </strong></font>
                                     <p>	<i><font color="white">Deposit into your actual account. This account can be withdrawn, subscribed from and traded with. Any profits you make with this account are real.</font></i></p></a>
 
@@ -489,9 +489,6 @@
 
     <!-- Custom js -->
     <script src="{{ asset('client/js/custom.js') }}"></script>
-
-
-
 
 
     <script type="text/javascript">

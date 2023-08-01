@@ -42,6 +42,7 @@ Route::group(['middleware' => ['auth', 'verified', 'admin'], 'prefix' => 'admin'
     Route::post('fund/user', "Admin\FundingController@sendFund")->name('sendFund');
 
     Route::resource('wallet', "Admin\PaymentMethodController");
+    Route::resource('copy-traders', "Admin\AdminCopyTraderController");
 
     //Trades Routes
     Route::get('open/trades/history', "Admin\AdminTradesController@openTrades")->name('trades.open');
