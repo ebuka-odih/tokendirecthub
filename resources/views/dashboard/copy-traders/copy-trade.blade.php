@@ -66,7 +66,7 @@
         }
     </style>
 
-<div class="container" style="margin-top:45px; color:white; text-align:center;">
+<div class="container" style="margin-top:100px; color:white; text-align:center;">
     <h1><strong>MY TRADERS</strong></h1>
 
 
@@ -81,9 +81,7 @@
     <div class="container" style="margin-top:45px; color:white; text-align:center;">
         <h3><strong>COPY EXPERT+ TRADERS</strong></h3>
 
-
-
-
+        @foreach($traders as $item)
         <div class="container bootstrap snippets bootdey">
             <div class="profile card" style="padding:10px; margin-bottom:10px;">
                 <div class="profile-body">
@@ -105,10 +103,6 @@
                                 <br>
                                 <p>Supported By Whirl Wind Invts.</p>
 
-
-
-
-
                                 <form method="POST" action="">
 
                                     <input type="hidden" name="user_id" value="1T8CV">
@@ -124,7 +118,7 @@
                                     <input type="hidden" name="percentage" value="20">
 
 
-                                    <button class="btn btn-warning" type="submit" name=""><a style="color:white;" href="copyview.php?id=18">Copy Trade</a></button>
+                                    <button class="btn btn-warning"  name=""><a style="color:white;" href="{{ route('user.copy-trader.show', $item->id) }}">Copy Trade</a></button>
 
                                 </form>
 
@@ -141,191 +135,8 @@
             </div>
 
         </div>
+        @endforeach
 
-        <div class="container bootstrap snippets bootdey">
-            <div class="profile card" style="padding:10px; margin-bottom:10px;">
-                <div class="profile-body">
-                    <div class="profile-bio">
-                        <div class="row">
-                            <div class="col-md-5 text-center">
-                                <img style="height:170px;" class="img-thumbnail md-margin-bottom-10" src="../administrators/upload/83E58524-699E-447C-9F06-06B03AAAFAF8.jpeg" alt="">
-
-                            </div>
-                            <div class="col-md-7">
-
-
-
-                                <h2>Username: 7WSND</h2>
-                                <span><strong>Accuracy:</strong> 70%</span><br>
-                                <span><strong>Trades Won in Ratio:</strong>88.2%</span><br>
-                                <span><strong>Trades lost in Ratio:</strong> 21.8%</span><br>
-                                <span><strong>Trade Percentage:</strong> 30%</span>
-                                <br>
-                                <p>Supported By Whirl Wind Invts.</p>
-
-
-
-
-
-                                <form method="POST" action="">
-
-                                    <input type="hidden" name="user_id" value="7WSND">
-
-                                    <input type="hidden" name="accuracy" value="70">
-
-                                    <input type="hidden" name="won_ratio" value="88.2">
-
-                                    <input type="hidden" name="username" value="nancy112">
-
-                                    <input type="hidden" name="loss_ratio" value="21.8">
-
-                                    <input type="hidden" name="percentage" value="30">
-
-
-                                    <button class="btn btn-warning" type="submit" name=""><a style="color:white;" href="copyview.php?id=17">Copy Trade</a></button>
-
-                                </form>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-        <div class="container bootstrap snippets bootdey">
-            <div class="profile card" style="padding:10px; margin-bottom:10px;">
-                <div class="profile-body">
-                    <div class="profile-bio">
-                        <div class="row">
-                            <div class="col-md-5 text-center">
-                                <img style="height:170px;" class="img-thumbnail md-margin-bottom-10" src="../administrators/upload/040954DC-1E58-43AA-A74B-DB0E9A5FDB37.jpeg" alt="">
-
-                            </div>
-                            <div class="col-md-7">
-
-
-
-                                <h2>Username: SZ3XF***567</h2>
-                                <span><strong>Accuracy:</strong> 80%</span><br>
-                                <span><strong>Trades Won in Ratio:</strong>88.14%</span><br>
-                                <span><strong>Trades lost in Ratio:</strong> 11.86%</span><br>
-                                <span><strong>Trade Percentage:</strong> 30%</span>
-                                <br>
-                                <p>Supported By Whirl Wind Invts.</p>
-
-
-
-
-
-                                <form method="POST" action="">
-
-                                    <input type="hidden" name="user_id" value="SZ3XF***567">
-
-                                    <input type="hidden" name="accuracy" value="80">
-
-                                    <input type="hidden" name="won_ratio" value="88.14">
-
-                                    <input type="hidden" name="username" value="nancy112">
-
-                                    <input type="hidden" name="loss_ratio" value="11.86">
-
-                                    <input type="hidden" name="percentage" value="30">
-
-
-                                    <button class="btn btn-warning" type="submit" name=""><a style="color:white;" href="copyview.php?id=16">Copy Trade</a></button>
-
-                                </form>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-
-
-
-        <div class="container" style="margin-top:45px; color:white; text-align:center;">
-            <h3><strong>COPY EXPERT TRADERS</strong></h3>
-
-
-
-
-            <div class="container bootstrap snippets bootdey">
-                <div class="profile card">
-                    <div class="profile-body" style="padding:10px; margin-bottom:10px;">
-                        <div class="profile-bio">
-                            <div class="row">
-                                <div class="col-md-5 text-center">
-                                    <img style="height:170px;" class="img-thumbnail md-margin-bottom-10" src="img/9F660119-205F-4609-AB9B-71E3FDAA88A6.jpeg" alt="">
-
-                                </div>
-                                <div class="col-md-7">
-
-
-
-                                    <h2>Username: 5K1LX***101</h2>
-                                    <span><strong>Accuracy:</strong> 86%</span><br>
-                                    <span><strong>Trades Won in Ratio:</strong>89.9%</span><br>
-                                    <span><strong>Trades lost in Ratio:</strong> 10.1%</span><br>
-                                    <span><strong>Trade Percentage:</strong> 15%</span>
-                                    <br>
-                                    <p>Supported By Whirl Wind Invts.</p>
-
-
-
-
-
-                                    <form method="POST" action="">
-
-                                        <input type="hidden" name="user_id" value="5K1LX***101">
-
-                                        <input type="hidden" name="accuracy" value="86">
-
-                                        <input type="hidden" name="won_ratio" value="89.9">
-
-                                        <input type="hidden" name="username" value="nancy112">
-
-                                        <input type="hidden" name="loss_ratio" value="10.1">
-
-                                        <input type="hidden" name="percentage" value="15">
-
-
-
-                                        <button class="btn btn-warning" type="submit" name=""><a style="color:white;" href="copyview.php?id=19">Copy Trade</a></button>
-
-                                    </form>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-        </div>
 
 
     </div>

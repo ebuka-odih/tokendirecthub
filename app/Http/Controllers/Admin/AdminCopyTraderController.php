@@ -57,4 +57,11 @@ class AdminCopyTraderController extends Controller
         return redirect()->back()->with('success', 'Created Successfully');
     }
 
+    public function destroy($id)
+    {
+        $data = CopyTraders::findOrFail($id);
+        $data->delete();
+        return redirect()->back();
+    }
+
 }

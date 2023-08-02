@@ -1,7 +1,7 @@
 @extends('dashboard.layout.app')
 @section('content')
 
-<div class="container" style="margin-top:45px; color:white; text-align:center;">
+<div class="container" style="margin-top:100px; color:white; text-align:center;">
     <h1><strong>MY TRADERS</strong></h1>
 
 
@@ -22,6 +22,11 @@
 
         <div class="container" style="margin-top:45px; color:white; text-align:center;">
             <h3><strong>COPY EXPERT TRADERS</strong></h3>
+            @if(session()->has('success'))
+                <div class="alert alert-success">
+                    {{ session()->get('success') }}
+                </div>
+            @endif
 
             <div class="container bootstrap snippets bootdey">
                 <div class="profile card">
@@ -33,47 +38,28 @@
 
                                 </div>
                                 <div class="col-md-7">
-
-
-
-                                    <h2>Username: 7WSND</h2>
-                                    <span><strong>Accuracy:</strong> 70%</span><br>
-                                    <span><strong>Trades Won in Ratio:</strong>88.2%</span><br>
-                                    <span><strong>Trades lost in Ratio:</strong> 21.8%</span><br>
-                                    <span><strong>Trade Percentage:</strong> 30%</span>
+                                    <h2>Username: {{ $trader->username }}</h2>
+                                    <span><strong>Accuracy:</strong> {{ $trader->accuracy }}</span><br>
+                                    <span><strong>Trades Won in Ratio:</strong>{{ $trader->won_trades }}%</span><br>
+                                    <span><strong>Trades lost in Ratio:</strong> {{ $trader->lost_trades }}%</span><br>
+                                    <span><strong>Trade Percentage:</strong> {{ $trader->total_pec }}%</span>
                                     <br>
-                                    <p>Supported By Whirl Wind Invts.</p>
+                                    <p>Supported By Token DirectHub.</p>
 
-
+                                    @if(auth()->user()->balance < 500)
                                     <div class="alert alert-info fade show" role="alert">
                                         <center style="color:red;">	INSUFFICIENT TRADING BALANCE.</center>
 
                                     </div>
+                                    @endif
 
 
-                                    <form method="POST" action="copyaction.php">
+                                    <form method="POST" action="{{ route('user.copy-trader.store') }}">
+                                        @csrf
 
-                                        <input type="hidden" name="user_id" value="7WSND">
+                                        <input type="hidden" name="user_id" value="{{ auth()->id() }}">
 
-                                        <input type="hidden" name="accuracy" value="70">
-
-                                        <input type="hidden" name="won_ratio" value="88.2">
-
-                                        <input type="hidden" name="file" value="83E58524-699E-447C-9F06-06B03AAAFAF8.jpeg">
-
-                                        <input type="hidden" name="username" value="nancy112">
-
-
-                                        <input type="hidden" name="loss_ratio" value="21.8">
-
-                                        <input type="hidden" name="percentage" value="30">
-
-
-                                        <div class="alert alert-info fade show" role="alert">
-                                            <center style="color:;">EXPERT TRADE NOT COPIED</center>
-
-                                        </div>
-
+                                        <input type="hidden" name="trader_id" value="{{ $trader->id }}">
 
                                         <button class="btn btn-warning" type="submit" name="copy" style="color:white;">Copy Trade</button>
 

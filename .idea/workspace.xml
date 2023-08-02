@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="790db171-8dfb-4ba3-9fe2-cc7a1ea19055" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/signals.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminCopyTraderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminCopyTraderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2023_07_31_220359_create_copy_traders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2023_07_31_220359_create_copy_traders_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/copytrades/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/copytrades/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/sub/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/sub/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CopyTradeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CopyTradeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2023_07_31_220448_create_copy_trades_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2023_07_31_220448_create_copy_trades_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/copy-traders/copy-trade.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/copy-traders/copy-trade.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/copy-traders/copyview.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/copy-traders/copyview.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/layout/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +177,7 @@
       <workItem from="1690543053615" duration="4807000" />
       <workItem from="1690666755060" duration="967000" />
       <workItem from="1690801746184" duration="19576000" />
-      <workItem from="1690968573159" duration="1184000" />
+      <workItem from="1690968573159" duration="6689000" />
     </task>
     <servers />
   </component>
