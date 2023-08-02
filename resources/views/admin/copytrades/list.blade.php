@@ -22,6 +22,20 @@
                 <div class="block-header block-header-default">
 {{--                    <a href="" class="btn btn-secondary">Add Trader</a>--}}
                     <button type="button" class="btn btn-primary push" data-bs-toggle="modal" data-bs-target="#modal-block-normal">Add Trader</button>
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    @if(session()->has('success'))
+                        <div class="alert alert-success">
+                            {{ session()->get('success') }}
+                        </div>
+                    @endif
                 </div>
                 <div class="block-content">
                     <table class="table table-striped table-vcenter">
@@ -29,7 +43,8 @@
                         <tr>
                             <th class="text-center" style="width: 50px;">#</th>
                             <th>User</th>
-                            <th>accuracy</th>
+                            <th>Accuracy</th>
+                            <th>Pro Trade</th>
                             <th>Won Trades</th>
                             <th class="d-none d-sm-table-cell" style="width: 15%;">Lost Trades</th>
                             <th class="d-none d-sm-table-cell" style="width: 15%;">Total Percentage</th>
@@ -41,11 +56,14 @@
                             <tr>
                                 <th class="text-center" scope="row">{{ $index + 1 }}</th>
                                 <td class="fw-semibold">
-                                    <img src="" alt="">
+                                    <img height="50" width="50" src="{{ asset('files/'.$item->pro_image )}}" alt="">
                                     {{ $item->username }}
                                 </td>
                                 <td class="fw-semibold">
                                     {{ $item->accuracy }}
+                                </td>
+                                <td class="fw-semibold">
+                                    {{ $item->pro_trade() }}
                                 </td>
                                 <td class="fw-semibold">
                                     {{ $item->won_trades }}
@@ -58,11 +76,11 @@
                                 </td>
                                 <td class="text-center">
                                     <div class="btn-group">
-                                        <a href="{{ route('admin.package.edit', $item->id) }}" class="btn btn-sm btn-alt-secondary js-bs-tooltip-enabled" data-bs-toggle="tooltip" title="" data-bs-original-title="Edit">
+                                        <a href="{{ route('admin.copy-traders.edit', $item->id) }}" class="btn btn-sm btn-alt-secondary js-bs-tooltip-enabled" data-bs-toggle="tooltip" title="" data-bs-original-title="Edit">
                                             <i class="fa fa-pencil-alt"></i>
                                         </a>
 
-                                        <form method="POST" action="{!! route('admin.package.destroy', $item->id) !!}" accept-charset="UTF-8">
+                                        <form method="POST" action="{!! route('admin.copy-traders.destroy', $item->id) !!}" accept-charset="UTF-8">
                                             <input name="_method" value="DELETE" type="hidden">
                                             {{ csrf_field() }}
 
@@ -95,20 +113,59 @@
             <div class="modal-content">
                 <div class="block block-rounded block-themed block-transparent mb-0">
                     <div class="block-header bg-primary-dark">
-                        <h3 class="block-title">Modal Title</h3>
+                        <h3 class="block-title">Add Copy Trader</h3>
                         <div class="block-options">
                             <button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close">
                                 <i class="fa fa-fw fa-times"></i>
                             </button>
                         </div>
                     </div>
+                    <form action="{{ route('admin.copy-traders.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+
                     <div class="block-content">
-                        <p>Potenti elit lectus augue eget iaculis vitae etiam, ullamcorper etiam bibendum ad feugiat magna accumsan dolor, nibh molestie cras hac ac ad massa, fusce ante convallis ante urna molestie vulputate bibendum tempus ante justo arcu erat accumsan adipiscing risus, libero condimentum venenatis sit nisl nisi ultricies sed, fames aliquet consectetur consequat nostra molestie neque nullam scelerisque neque commodo turpis quisque etiam egestas vulputate massa, curabitur tellus massa venenatis congue dolor enim integer luctus, nisi suscipit gravida fames quis vulputate nisi viverra luctus id leo dictum lorem, inceptos nibh orci.</p>
+
+                            <div class="row">
+                                <div class="mb-2 col-lg-12">
+                                    <label class="form-label" for="example-text-input">Image</label>
+                                    <input type="file" class="form-control" id="example-text-input" name="pro_image" >
+                                </div>
+                                <div class="mb-2 col-lg-12">
+                                    <label class="form-label" for="example-text-input">Username</label>
+                                    <input type="text" class="form-control" id="example-text-input" name="username" >
+                                </div>
+                                <div class="mb-2 col-lg-12">
+                                    <label class="form-label" for="example-text-input">Accuracy(%)</label>
+                                    <input type="text" class="form-control" id="example-text-input" name="accuracy" >
+                                </div>
+                                <div class="mb-2 col-lg-12">
+                                    <label class="form-label" for="example-text-input">Won Trades(%)</label>
+                                    <input type="text" class="form-control" id="example-text-input" name="won_trades" >
+                                </div>
+                                <div class="mb-2 col-lg-12">
+                                    <label class="form-label" for="example-text-input">Lost Trades(%)</label>
+                                    <input type="text" class="form-control" id="example-text-input" name="lost_trades" >
+                                </div>
+                                <div class="mb-2 col-lg-12">
+                                    <label class="form-label" for="example-text-input">Total Percentage(%)</label>
+                                    <input type="text" class="form-control" id="example-text-input" name="total_pec" >
+                                </div>
+                                <div class="mb-2 col-lg-12">
+                                    <label class="form-label" for="example-text-input">Pro Signal</label>
+                                    <select name="pro_trade" id="" class="form-control">
+                                        <option >Select Option</option>
+                                        <option value="1">Yes</option>
+                                        <option value="0">No</option>
+                                    </select>
+                                </div>
+                            </div>
+
                     </div>
                     <div class="block-content block-content-full text-end bg-body">
                         <button type="button" class="btn btn-sm btn-alt-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal">Done</button>
+                        <button type="submit" class="btn btn-sm btn-primary" data-bs-dismiss="modal">Submit</button>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>

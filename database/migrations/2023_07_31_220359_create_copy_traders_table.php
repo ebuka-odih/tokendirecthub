@@ -22,7 +22,7 @@ class CreateCopyTradersTable extends Migration
             $table->string('won_trades')->nullable();
             $table->string('lost_trades')->nullable();
             $table->string('total_pec')->nullable();
-            $table->integer('pro_trade')->nullable();
+            $table->integer('pro_trade')->default(0);
         });
     }
 

@@ -2,30 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="790db171-8dfb-4ba3-9fe2-cc7a1ea19055" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/copytrades/list.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/assets.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/copy-traders/copy-trade.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/copy-traders/copyview.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/deposit/deposit-history.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/deposit/payment.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/blade.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/blade.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/tokendirecthub.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tokendirecthub.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Deposit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Deposit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DepositController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DepositController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/AdminDepositAlert.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/AdminDepositAlert.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/DepositAlert.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/DepositAlert.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2022_06_20_054128_create_deposits_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_06_20_054128_create_deposits_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layout/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/deposit/deposit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/deposit/deposit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/layout/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminCopyTraderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminCopyTraderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2023_07_31_220359_create_copy_traders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2023_07_31_220359_create_copy_traders_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/copytrades/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/copytrades/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/sub/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/sub/create.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +172,8 @@
       <workItem from="1690487021914" duration="11570000" />
       <workItem from="1690543053615" duration="4807000" />
       <workItem from="1690666755060" duration="967000" />
-      <workItem from="1690801746184" duration="15103000" />
+      <workItem from="1690801746184" duration="19576000" />
+      <workItem from="1690968573159" duration="1184000" />
     </task>
     <servers />
   </component>
