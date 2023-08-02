@@ -182,12 +182,12 @@
                             </a>
                         </li>
 
-                        <li class="nav-item  ">
-                            <a class="nav-link with-sub" href="assets.php">
-                                <svg class="sidemenu-icon menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M96 352V96c0-35.3 28.7-64 64-64H416c35.3 0 64 28.7 64 64V293.5c0 17-6.7 33.3-18.7 45.3l-58.5 58.5c-12 12-28.3 18.7-45.3 18.7H160c-35.3 0-64-28.7-64-64zM272 128c-8.8 0-16 7.2-16 16v48H208c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h48v48c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V256h48c8.8 0 16-7.2 16-16V208c0-8.8-7.2-16-16-16H320V144c0-8.8-7.2-16-16-16H272zm24 336c13.3 0 24 10.7 24 24s-10.7 24-24 24H136C60.9 512 0 451.1 0 376V152c0-13.3 10.7-24 24-24s24 10.7 24 24l0 224c0 48.6 39.4 88 88 88H296z"/></svg>
-                                <span class="sidemenu-label">Assets</span>
-                            </a>
-                        </li>
+{{--                        <li class="nav-item  ">--}}
+{{--                            <a class="nav-link with-sub" href="assets.php">--}}
+{{--                                <svg class="sidemenu-icon menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M96 352V96c0-35.3 28.7-64 64-64H416c35.3 0 64 28.7 64 64V293.5c0 17-6.7 33.3-18.7 45.3l-58.5 58.5c-12 12-28.3 18.7-45.3 18.7H160c-35.3 0-64-28.7-64-64zM272 128c-8.8 0-16 7.2-16 16v48H208c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h48v48c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V256h48c8.8 0 16-7.2 16-16V208c0-8.8-7.2-16-16-16H320V144c0-8.8-7.2-16-16-16H272zm24 336c13.3 0 24 10.7 24 24s-10.7 24-24 24H136C60.9 512 0 451.1 0 376V152c0-13.3 10.7-24 24-24s24 10.7 24 24l0 224c0 48.6 39.4 88 88 88H296z"/></svg>--}}
+{{--                                <span class="sidemenu-label">Assets</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
 
                         <li class="nav-item  ">
                             <a class="nav-link with-sub" href="{{ route('user.copy-trader.index') }}">
@@ -197,15 +197,6 @@
                         </li>
 
 
-
-                        <!--		<li class="nav-item ">
-                                    <a class="nav-link with-sub " href="mining.php">
-                                      <svg class="sidemenu-icon menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. <path d="M176 24V0H128V24 64H64v64H24 0v48H24 64v56H24 0v48H24 64v56H24 0v48H24 64v64h64v40 24h48V488 448h56v40 24h48V488 448h56v40 24h48V488 448h64V384h40 24V336H488 448V280h40 24V232H488 448V176h40 24V128H488 448V64H384V24 0H336V24 64H280V24 0H232V24 64H176V24zM352 160H160V352H352V160zM160 128H352h32v32V352v32H352 160 128V352 160 128h32z"/></svg>
-
-                                        <span class="sidemenu-label">Mining</span>
-                                    </a>
-                                </li>-->
-
                         <li class="nav-item ">
                             <a class="nav-link with-sub " href="{{ route('user.deposit') }}">
                                 <svg class="sidemenu-icon menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM232 344V280H168c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H280v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></svg>
@@ -214,7 +205,7 @@
                         </li>
 
                         <li class="nav-item ">
-                            <a class="nav-link with-sub " href="signals.php">
+                            <a class="nav-link with-sub " href="{{ route('user.signals.index') }}">
                                 <svg class="sidemenu-icon menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM232 344V280H168c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H280v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></svg>
                                 <span class="sidemenu-label">Daily Signals</span>
                             </a>

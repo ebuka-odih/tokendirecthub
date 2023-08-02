@@ -18,6 +18,7 @@ class CreateSignalsTable extends Migration
             $table->timestamps();
             $table->string('type');
             $table->string('pair');
+            $table->string('lot')->nullable();
             $table->string('tp');
             $table->string('sl');
             $table->string('ta');

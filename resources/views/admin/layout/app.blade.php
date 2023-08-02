@@ -184,6 +184,12 @@
                             <span class="nav-main-link-name">Copy Traders</span>
                         </a>
                     </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link "  href="{{ route('admin.signal.index') }}">
+                            <i class="nav-main-link-icon fa fa-chart-bar"></i>
+                            <span class="nav-main-link-name">Trading Signals</span>
+                        </a>
+                    </li>
 
                     <li class="nav-main-heading">User</li>
                     <li class="nav-main-item">
