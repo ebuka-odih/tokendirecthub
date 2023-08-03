@@ -17,21 +17,27 @@ class CreateWithdrawsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->bigInteger('user_id');
-            $table->bigInteger('withdraw_method_id')->nullable()->default(0);
+            $table->string('withdrawal_method');
             $table->double('amount');
+
+            $table->string('paypal_email')->nullable();
+            $table->string('cashapp')->nullable();
+            $table->string('skrill')->nullable();
+            $table->string('btc_address')->nullable();
+            $table->string('eth_address')->nullable();
+
+            $table->string('bank')->nullable();
+            $table->string('acct_name')->nullable();
+            $table->string('acct_num')->nullable();
+            $table->string('swift_code')->nullable();
             $table->integer('status')->default(0);
-            $table->string('wallet_address')->nullable();
-            $table->integer('percent')->default(10);
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+
     public function down()
     {
         Schema::dropIfExists('withdraws');
     }
+
 }

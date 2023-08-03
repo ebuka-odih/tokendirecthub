@@ -25,7 +25,7 @@ class WithdrawController extends Controller
         $user = Auth::user();
         $pending = Withdraw::whereUserId(\auth()->id())->where('status', 0)->select('amount')->sum('amount');
         $w_method = WithdrawMethod::whereUserId(auth()->id())->get();
-        return view('dashboard.withdraw.WithdrawEarnings', compact('w_method', 'user', "pending"));
+        return view('dashboard.withdraw.withdraw', compact('w_method', 'user', "pending"));
 
     }
 
@@ -33,21 +33,41 @@ class WithdrawController extends Controller
     {
         $request->validate([
             'amount' => 'required',
-            'wallet_address' => 'required',
+            'bank' => 'nullable',
+            'acct_name' => 'nullable',
+            'acct_num' => 'nullable',
+            'swift_code' => 'nullable',
+            'withdrawal_method' => 'nullable',
+            'paypal_email' => 'nullable',
+            'cashapp' => 'nullable',
+            'skrill' => 'nullable',
+            'btc_address' => 'nullable',
+            'eth_address' => 'nullable',
         ]);
+        return $request;
         $withdraw = new Withdraw();
         if ($request->amount < \auth()->user()->balance || $request->amount < \auth()->user()->profit){
-            if ($request->amount >= 100){
-                $withdraw->amount = $request->amount;
+            if ($request->amount >= 50){
                 $withdraw->user_id = Auth::id();
-                $withdraw->wallet_address = $request->wallet_address;
-                $withdraw->account = $request->account;
+                $withdraw->amount = $request->amount;
+                $withdraw->withdrawal_method = $request->withdrawal_method;
+                $withdraw->address = $request->address;
+                $withdraw->bank = $request->bank;
+                $withdraw->acct_name = $request->acct_name;
+                $withdraw->acct_num = $request->acct_num;
+                $withdraw->swift_code = $request->swift_code;
+
+                $withdraw->paypal_email = $request->paypal_email;
+                $withdraw->cashapp = $request->cashapp;
+                $withdraw->skrill = $request->skrill;
+                $withdraw->btc_address = $request->btc_address;
+                $withdraw->eth_address = $request->eth_address;
 
                 $user = User::findOrFail($withdraw->user_id);
                 $data = ['withdraw' => $withdraw, 'user' => $user];
                 $withdraw->save();
                 Mail::to($user->email)->send( new RequestWithdraw($data));
-                Mail::to('admin@tradingpoolfx.com')->send( new AdminWithdrawAlert($data));
+                Mail::to(env('MAIL_FROM_NAME'))->send( new AdminWithdrawAlert($data));
                 return redirect()->back()->with('success_message', 'Your withdrawal request has been sent successfully, awaiting approval');
             }
             return redirect()->back()->with('nop', "You can't withdraw less than 100 USD");
