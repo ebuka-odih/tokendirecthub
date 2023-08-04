@@ -33,13 +33,17 @@
                     <tr>
                         <th>Date</th>
                         <th>Details</th>
+                        <th>Traded</th>
                         <th>ROI</th>
                     </tr>
                 </thead>
                 <tbody>
                 @foreach($trades as $item)
                     <tr>
-                        <td></td>
+                        <td>{{ date('Y, m d', strtotime($item->created_at)) }}</td>
+                        <td>{{ $item->copy_trader->username }}</td>
+                        <td>$500</td>
+                        <td>${{ $item->roi }}</td>
                     </tr>
                 @endforeach
                 </tbody>

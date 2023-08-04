@@ -138,7 +138,7 @@
                                                         <td><span id="btc-balance"></span></td>
                                                         <td>
                                                             <a href="{{ route('user.deposit') }}"  class="btn ripple btn-primary-transparent">Deposit</a>
-                                                            <a href="withdrawal.php" class="btn ripple btn-dark-transparent">Withdraw</a>
+                                                            <a href="{{ route('user.withdraw') }}" class="btn ripple btn-dark-transparent">Withdraw</a>
                                                         </td>
                                                     </tr>
 
@@ -149,7 +149,7 @@
                                                         <td><span id="eth-balance"></span></td>
                                                         <td>
                                                             <a href="{{ route('user.deposit') }}"   class="btn ripple btn-primary-transparent">Deposit</a>
-                                                            <a href="withdrawal.php" class="btn ripple btn-dark-transparent">Withdraw</a>
+                                                            <a href="{{ route('user.withdraw') }}" class="btn ripple btn-dark-transparent">Withdraw</a>
                                                         </td>
                                                     </tr>
                                                     </tbody>
@@ -413,10 +413,6 @@
                                 </div>
                             </div>
 
-                            <div class="alert alert-info fade show" role="alert">
-                                <center><a href="demo.php">Switch to Demo Trade Account</a></center>
-
-                            </div>
 
                             <div class="row row-sm mg-b-20">
                                 <div class="col-lg-12">
