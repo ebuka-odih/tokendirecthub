@@ -132,7 +132,7 @@
                                                 <table class="table table-borderless text-nowrap text-md-nowrap table-hover mg-b-0">
                                                     <tbody>
                                                     <tr>
-                                                        <td><img src="../main/assets/img/svgs/crypto-currencies/btc.svg" class="wd-25 ht-20 me-3 my-auto" alt=""></td>
+                                                        <td><img src="{{ asset('img/btc.svg') }}" class="wd-25 ht-20 me-3 my-auto" alt=""></td>
 
                                                         <td>$ 0.00 BTC</td>
                                                         <td><span id="btc-balance"></span></td>
@@ -143,7 +143,7 @@
                                                     </tr>
 
                                                     <tr>
-                                                        <th scope="row"><img src="../main/assets/img/svgs/crypto-currencies/eth.svg" class="wd-25 ht-20 me-3 my-auto" alt=""></th>
+                                                        <th scope="row"><img src="{{ asset('img/eth.svg') }}" class="wd-25 ht-20 me-3 my-auto" alt=""></th>
 
                                                         <td><span id="eth-balance-eq"></span>$ 0.00 ETH</td>
                                                         <td><span id="eth-balance"></span></td>
@@ -162,25 +162,25 @@
                                                 <table class="table table-borderless text-nowrap text-md-nowrap table-hover mg-b-0">
                                                     <tbody>
                                                     <tr>
-                                                        <td><img src="../main/assets/img/svgs/crypto-currencies/btc.svg" class="wd-25 ht-20 me-3 my-auto" alt=""></td>
+                                                        <td><img src="{{ asset('img/btc.svg') }}" class="wd-25 ht-20 me-3 my-auto" alt=""></td>
 
                                                         <td>0.00000000 BTC</td>
                                                         <td>$ 0.00</td>
                                                         <td>
-                                                            <a href="withdrawal.php" class="btn ripple btn-dark-transparent">Withdraw</a>
-                                                            <a href="#" data-bs-target="#depositmodal" data-bs-toggle="modal" class="btn ripple btn-primary-transparent">Deposit</a>
+                                                            <a href="{{ route('user.withdraw') }}" class="btn ripple btn-dark-transparent">Withdraw</a>
+                                                            <a href="{{ route('user.deposit') }}"  class="btn ripple btn-primary-transparent">Deposit</a>
 
                                                         </td>
                                                     </tr>
 
                                                     <tr>
-                                                        <th scope="row"><img src="../main/assets/img/svgs/crypto-currencies/eth.svg" class="wd-25 ht-20 me-3 my-auto" alt=""></th>
+                                                        <th scope="row"><img src="{{ asset('img/eth.svg') }}" class="wd-25 ht-20 me-3 my-auto" alt=""></th>
 
                                                         <td>0.00 ETH</td>
                                                         <td>$ 0.00</td>
                                                         <td>
-                                                            <a href="withdrawal.php" class="btn ripple btn-dark-transparent">Withdraw</a>
-                                                            <a href="#" data-bs-target="#depositmodal" data-bs-toggle="modal" class="btn ripple btn-primary-transparent">Deposit</a>
+                                                            <a href="{{ route('user.withdraw') }}" class="btn ripple btn-dark-transparent">Withdraw</a>
+                                                            <a href="{{ route('user.deposit') }}"  class="btn ripple btn-primary-transparent">Deposit</a>
 
                                                         </td>
                                                     </tr>
