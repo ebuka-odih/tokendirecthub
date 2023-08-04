@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="790db171-8dfb-4ba3-9fe2-cc7a1ea19055" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/subscription/sub.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/subscription/plans.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SubscriptionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SubscriptionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SubscribeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SubscribeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2022_07_26_070700_create_subscriptions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_07_26_070700_create_subscriptions_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/sub/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/sub/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/subscription/sub.blade.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +176,7 @@
       <workItem from="1690666755060" duration="967000" />
       <workItem from="1690801746184" duration="19576000" />
       <workItem from="1690968573159" duration="30104000" />
-      <workItem from="1691179123030" duration="942000" />
+      <workItem from="1691179123030" duration="2354000" />
     </task>
     <servers />
   </component>

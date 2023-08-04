@@ -14,7 +14,7 @@ class SubscribeController extends Controller
     public function plans()
     {
         $plans = Subscription::all();
-        return view('dashboard.transactions.InvestFund', compact('plans'));
+        return view('dashboard.subscription.plans', compact('plans'));
     }
 
     public function subscribe(Request $request)
@@ -27,9 +27,9 @@ class SubscribeController extends Controller
         $sub = new Subscribe();
         if ($request->amount <= \auth()->user()->balance){
 //            $plan_id = Package::findOrFail($request->package_id);
-            if ($request->get('amount') < $plan_id->min_deposit || $request->get('amount') > $plan_id->max_deposit)
+            if ($request->get('amount') < $plan_id->min_deposit)
             {
-                return redirect()->back()->with('declined', "Please enter the amount within the Min/Max Deposit");
+                return redirect()->back()->with('declined', "Entered amount is less than min deposit");
             }else{
                 $sub->subscription_id = $request->subscription_id;
                 $sub->user_id = Auth::id();

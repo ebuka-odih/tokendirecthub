@@ -44,18 +44,14 @@
                                         <input type="number" class="form-control" id="example-email-input" name="term_days" >
                                     </div>
                                     <div class="mb-4 col-lg-4">
-                                        <label class="form-label" for="example-email-input">Daily Interest</label>
-                                        <input type="number" class="form-control" id="example-email-input" name="daily_interest" >
+                                        <label class="form-label" for="example-email-input">ROI</label>
+                                        <input type="number" class="form-control" id="example-email-input" name="roi" >
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="mb-4 col-lg-6">
-                                        <label class="form-label" for="example-password-input">Min Amount</label>
-                                        <input type="text" class="form-control" id="example-password-input" name="min_deposit" >
-                                    </div>
-                                    <div class="mb-4 col-lg-6">
+                                    <div class="mb-4 col-lg-12">
                                         <label class="form-label" for="example-password-input">Max Amount</label>
-                                        <input type="number" class="form-control" id="example-password-input" name="max_deposit" >
+                                        <input type="number" class="form-control" id="example-password-input" name="min_deposit" >
                                     </div>
                                 </div>
 
@@ -86,9 +82,8 @@
                             <th class="text-center" style="width: 50px;">#</th>
                             <th>Name</th>
                             <th>Term Day(s)</th>
-                            <th>Daily Interest(%)</th>
+                            <th> ROI(%)</th>
                             <th >Min Deposit</th>
-                            <th >Max Deposit</th>
                             <th class="text-center" style="width: 100px;">Actions</th>
                         </tr>
                         </thead>
@@ -103,13 +98,10 @@
                                     {{ $item->term_days }} Day(s)
                                 </td>
                                 <td class="fw-semibold">
-                                    {{ $item->daily_interest }}%
+                                    {{ $item->roi }}%
                                 </td>
                                 <td class="d-none d-sm-table-cell">
                                     ${{ $item->min_deposit }}
-                                </td>
-                                <td class="d-none d-sm-table-cell">
-                                    ${{ $item->max_deposit }}
                                 </td>
                                 <td class="text-center">
                                     <div class="btn-group">
