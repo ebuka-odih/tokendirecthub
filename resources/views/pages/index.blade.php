@@ -16,7 +16,7 @@
                                 <div class="uk-overlay">
                                     <h1 class="uk-animation-slide-bottom">Trade Stocks and Forex with Financial Thinking</h1>
                                     <p class="uk-text-lead uk-visible@m uk-animation-slide-bottom">Access 40,000+ instruments – across asset classes – to trade, hedge and invest from a single account.</p>
-                                    <a href="{{ route('register') }}" class="uk-button uk-button-primary uk-border-rounded uk-visible@m register uk-animation-slide-bottom"><i class="fas fa-scroll uk-margin-small-right"></i>Discover it now</a>
+                                    <a href="{{ route('register') }}" class="uk-button uk-button-primary uk-border-rounded  register uk-animation-slide-bottom"><i class="fas fa-scroll uk-margin-small-right"></i>Register now</a>
                                 </div>
                             </div>
                         </div>
@@ -33,7 +33,7 @@
                                 <div class="uk-overlay">
                                     <h1 class="uk-animation-slide-bottom">Multi-regulated Global Stocks, Shares and FX Broker</h1>
                                     <p class="uk-text-lead uk-visible@m uk-animation-slide-bottom">A trusted destination for traders worldwide, Authorised by FCA, ASIC &amp; FSCA with multi-lingual support 24/5.</p>
-                                    <a href="{{ route('login') }}" class="uk-button uk-button-primary uk-border-rounded uk-visible@m login"><i class="fas fa-scroll uk-margin-small-right uk-animation-slide-bottom"></i>Discover it now</a>
+                                    <a href="{{ route('login') }}" class="uk-button uk-button-primary uk-border-rounded  login"><i class="fas fa-scroll uk-margin-small-right uk-animation-slide-bottom"></i>Login </a>
                                 </div>
                             </div>
                         </div>
@@ -50,7 +50,7 @@
                                 <div class="uk-overlay">
                                     <h1 class="uk-animation-slide-bottom">Award-winning Products and Trading platforms</h1>
                                     <p class="uk-text-lead uk-visible@m uk-animation-slide-bottom">Tap into the world's markets and explore endless trading opportunities with tight spreads and no commission.</p>
-                                    <a href="{{ route('register') }}" class="uk-button uk-button-primary uk-border-rounded uk-visible@m login uk-animation-slide-bottom"><i class="fas fa-scroll uk-margin-small-right"></i>Discover it now</a>
+                                    <a href="{{ route('register') }}" class="uk-button uk-button-primary uk-border-rounded  login uk-animation-slide-bottom"><i class="fas fa-scroll uk-margin-small-right"></i>Discover it now</a>
                                 </div>
                             </div>
                         </div>
@@ -107,9 +107,11 @@
                         </div>
                         <div class="uk-width-expand">
                             <p>Over 2,100<br>assets to trade</p>
+
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
