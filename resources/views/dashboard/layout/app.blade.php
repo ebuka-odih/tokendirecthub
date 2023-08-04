@@ -80,49 +80,6 @@
             <div class="main-header-right">
 
 
-                <div class="dropdown d-flex main-header-notification">
-                    <a class="nav-link icon" href="javascript:;">
-                        <svg class="header-icons" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24"><path d="M18,14.1V10c0-3.1-2.4-5.7-5.5-6V2.5C12.5,2.2,12.3,2,12,2s-0.5,0.2-0.5,0.5V4C8.4,4.3,6,6.9,6,10v4.1c-1.1,0.2-2,1.2-2,2.4v2C4,18.8,4.2,19,4.5,19h3.7c0.5,1.7,2,3,3.8,3c1.8,0,3.4-1.3,3.8-3h3.7c0.3,0,0.5-0.2,0.5-0.5v-2C20,15.3,19.1,14.3,18,14.1z M7,10c0-2.8,2.2-5,5-5s5,2.2,5,5v4H7V10z M13,20.8c-1.6,0.5-3.3-0.3-3.8-1.8h5.6C14.5,19.9,13.8,20.5,13,20.8z M19,18H5v-1.5C5,15.7,5.7,15,6.5,15h11c0.8,0,1.5,0.7,1.5,1.5V18z"/></svg>
-                        <span class="badge bg-info nav-link-badge">
-
-							    <svg fill="#01b8ff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512z"/></svg>
-							</span>
-                    </a>
-
-                    <div class="dropdown-menu">
-                        <div class="header-navheading">
-                            <div class="d-flex">
-                                <p class="main-notification-text mx-0 my-auto">Activity Log</p>
-
-                            </div>
-                        </div>
-                        <div class="main-notification-list">
-
-
-                            <div class="media new">
-                                <div class="main-img-user online">
-                                    <svg class="wd-20 ht-20 me-3 my-auto" fill="#01b8ff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H80z"/></svg>
-                                </div>
-                                <div class="media-body">
-                                    <a href="account_activity.php">
-                                        <p>Account signed-in</p>
-
-                                        <span>2023-07-25 12:46:17 </span>
-                                        <p>Ip Address</p>
-
-                                        <span>105.112.178.76 </span>
-                                    </a>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="dropdown-footer">
-                            <a href="account_activity.php">View All</a>
-                        </div>
-                    </div>
-
-                </div>
                 <div class="dropdown d-flex main-profile-menu">
                     <a class="d-flex" href="javascript:;">
 							<span class="main-img-user">
@@ -137,12 +94,15 @@
                         <a class="dropdown-item border-top" href="profile.php">
                             <i class="fe fe-user"></i> My Profile
                         </a>
-                        <a class="dropdown-item" href="activity-log.php">
-                            <i class="fe fe-compass"></i> Activity
-                        </a>
-                        <a class="dropdown-item" href="../account/">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
                             <i class="fe fe-power"></i> Sign Out
                         </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
                     </div>
                 </div>
 
@@ -161,10 +121,11 @@
             <div class="main-sidebar-header main-container-1 active">
                 <div class="sidemenu-logo">
                     <a class="main-logo" href="{{ route('user.dashboard') }}">
-                        <img src="../logo.png" class="header-brand-img desktop-logo-dark" alt="logo">
-                        <img src="../main/assets/img/brand/icon-light.png" class="header-brand-img icon-logo-dark" alt="logo">
-                        <img src="../logo.png" class="header-brand-img desktop-logo" alt="logo">
-                        <img src="../main/assets/img/brand/icon.png" class="header-brand-img icon-logo" alt="logo">
+                        <h3 style="font-weight: bolder; color: #0a53be">{{ env('APP_NAME') }}</h3>
+{{--                        <img src="../logo.png" class="header-brand-img desktop-logo-dark" alt="logo">--}}
+{{--                        <img src="../main/assets/img/brand/icon-light.png" class="header-brand-img icon-logo-dark" alt="logo">--}}
+{{--                        <img src="../logo.png" class="header-brand-img desktop-logo" alt="logo">--}}
+{{--                        <img src="../main/assets/img/brand/icon.png" class="header-brand-img icon-logo" alt="logo">--}}
                     </a>
                 </div>
                 <div class="main-sidebar-body main-body-1">
@@ -268,10 +229,16 @@
                                     </a>
                             </li>--->
                         <li id="foots" class="nav-item">
-                            <a class="nav-link with-sub" href="logout.php">
+                            <a class="nav-link with-sub" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
                                 <svg class="sidemenu-icon menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96C43 32 0 75 0 128V384c0 53 43 96 96 96h64c17.7 0 32-14.3 32-32s-14.3-32-32-32H96c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32h64zM504.5 273.4c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22v72H192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32H320v72c0 9.6 5.7 18.2 14.5 22s19 2 26-4.6l144-136z"/></svg>
                                 <span class="sidemenu-label">Logout</span>
                             </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
                         </li>
                     </ul>
                     <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#c9bebe" width="24" height="24" viewBox="0 0 24 24"><path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"/></svg></div>
