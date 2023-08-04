@@ -50,7 +50,7 @@ class SubscribeController extends Controller
     public function Investdetails($id){
         $sub = Subscribe::findOrFail($id);
         $user = User::findOrFail($sub->user_id);
-        return view('dashboard.transactions.investDetails', compact('user', 'sub'));
+        return view('dashboard.subscription.sub-details', compact('user', 'sub'));
     }
 
 

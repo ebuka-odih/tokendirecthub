@@ -249,18 +249,18 @@
                                        </li>--->
 
                         <li class="nav-item ">
-                            <a class="nav-link with-sub" href="subscribe.php">
+                            <a class="nav-link with-sub" href="{{ route('user.sub.plans') }}">
                                 <svg class="sidemenu-icon menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M64 32C28.7 32 0 60.7 0 96v64c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM344 152c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24zm96-24c0 13.3-10.7 24-24 24s-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24zM64 288c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V352c0-35.3-28.7-64-64-64H64zM344 408c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24zm104-24c0 13.3-10.7 24-24 24s-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24z"/></svg>
                                 <span class="sidemenu-label">Subscription</span>
                             </a>
                         </li>
 
-                        <li class="nav-item ">
-                            <a class="nav-link with-sub " href="verify.php">
-                                <svg class="sidemenu-icon menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
-                                <span class="sidemenu-label">Verify Account</span>
-                            </a>
-                        </li>
+{{--                        <li class="nav-item ">--}}
+{{--                            <a class="nav-link with-sub " href="verify.php">--}}
+{{--                                <svg class="sidemenu-icon menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>--}}
+{{--                                <span class="sidemenu-label">Verify Account</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
                         <!----	<li id="foot" class="nav-item card custom-card card-body">
                                     <a href="#" class="d-flex align-items-center text-white text-decoration-none">
                                         <img src="https://github.com/mdo.png" alt="hugenerd" width="50" height="50" class="sidemenu-icon menu-icon rounded-circle">
