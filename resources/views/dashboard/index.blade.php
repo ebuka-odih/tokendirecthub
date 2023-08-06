@@ -730,7 +730,7 @@
                                         <div class="transaction-details d-flex">
                                             <div>
                                                 <span class="text-dark tx-bold-12"> Total Deposits</span>
-                                                <h5 class="text-muted tx-bold-12"> $ 0.00</h5></div>
+                                                <h5 class="text-muted tx-bold-12"> $ @money($deposits)</h5></div>
                                             <div class="ms-auto fs-14 text-danger font-weight-normal">
                                                 <a href="{{ route('user.deposit') }}" class="btn ripple btn-warning-transparent">Deposit</a>
                                             </div>
@@ -749,9 +749,9 @@
                                         <div class="transaction-details d-flex">
                                             <div>
                                                 <span class="text-dark tx-bold-12"> Total Withdrawals</span>
-                                                <h5 class="text-muted tx-bold-12"> $ 0.00</h5></div>
+                                                <h5 class="text-muted tx-bold-12"> $ @money($withdrawal)</h5></div>
                                             <div class="ms-auto fs-14 text-danger font-weight-normal">
-                                                <a href="withdrawal.php" class="btn ripple btn-warning-transparent">New</a>
+                                                <a href="{{ route('user.withdraw') }}" class="btn ripple btn-warning-transparent">New</a>
                                             </div>
                                         </div>
 
@@ -759,29 +759,29 @@
                                 </div>
                             </div>
 
-                            <div class="card-body">
+{{--                            <div class="card-body">--}}
 
-                                <div class="transaction">
-                                    <div class="transaction-blog">
-                                        <div class="">
-                                            <svg class="wd-30 ht-40 me-3 my-auto" fill="#01b8ff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
-                                        </div>
-                                        <div class="transaction-details d-flex">
-                                            <div>
-                                                <span class="text-dark tx-bold-12"> Verification</span>
-                                                <p class="text-muted tx-bold-12"> Your account is not verified.</p></div>
+{{--                                <div class="transaction">--}}
+{{--                                    <div class="transaction-blog">--}}
+{{--                                        <div class="">--}}
+{{--                                            <svg class="wd-30 ht-40 me-3 my-auto" fill="#01b8ff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="transaction-details d-flex">--}}
+{{--                                            <div>--}}
+{{--                                                <span class="text-dark tx-bold-12"> Verification</span>--}}
+{{--                                                <p class="text-muted tx-bold-12"> Your account is not verified.</p></div>--}}
 
-                                            <div class="ms-auto fs-14 text-danger font-weight-normal">
-                                                <a href="verify.php" class="btn ripple btn-warning-transparent">Verify</a>
-                                            </div>
+{{--                                            <div class="ms-auto fs-14 text-danger font-weight-normal">--}}
+{{--                                                <a href="verify.php" class="btn ripple btn-warning-transparent">Verify</a>--}}
+{{--                                            </div>--}}
 
 
 
-                                        </div>
+{{--                                        </div>--}}
 
-                                    </div>
-                                </div>
-                            </div>
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
 
                         </div>

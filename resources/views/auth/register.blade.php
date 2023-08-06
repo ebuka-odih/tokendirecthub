@@ -97,7 +97,7 @@
                                             <label class="tx-medium">Lastname</label>
                                             <input class="form-control" placeholder="Enter your Name" type="text" name="lastname" required="">
                                         </div>
-                                        
+
                                         <div class="form-group text-start">
                                             <label class="tx-medium">Username</label>
                                             <input class="form-control" placeholder="Enter Preferred Username" type="text" name="username" required="">

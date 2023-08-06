@@ -165,12 +165,7 @@
 
                         </ul>
                     </li>
-                    <li class="nav-main-item">
-                        <a class="nav-main-link "  href="{{ route('admin.subscription.create') }}">
-                            <i class="nav-main-link-icon fa fa-users-slash"></i>
-                            <span class="nav-main-link-name">Subscribers</span>
-                        </a>
-                    </li>
+
                     <li class="nav-main-heading">Subscription</li>
                     <li class="nav-main-item">
                         <a class="nav-main-link "  href="{{ route('admin.subscription.create') }}">
