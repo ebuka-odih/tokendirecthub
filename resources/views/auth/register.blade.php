@@ -75,41 +75,29 @@
                                     <p class="mb-4 text-muted tx-13 ms-0 text-start">It's Free to Sign up and only takes a minute.</p>
 
                                     <center>	 </center>
-
-
-
-
-
-
-
-                                    <form method="POST" action="">
+                                    <form  action="{{ route('register') }}" method="POST" enctype="multipart/form-data">
+                                        @csrf
+                                        @if ($errors->any())
+                                            <div class="alert alert-danger">
+                                                <ul>
+                                                    @foreach ($errors->all() as $error)
+                                                        <li>{{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        @endif
+                                        <input type="hidden" name="referred_by" value="{{ request()->id}}" />
 
 
                                         <div class="form-group text-start">
-                                            <label class="tx-medium">FullName</label>
-                                            <input class="form-control" placeholder="Enter your Name" type="text" name="fullname" required="">
+                                            <label class="tx-medium">Firstname</label>
+                                            <input class="form-control" placeholder="Enter your Name" type="text" name="firstname" required="">
                                         </div>
-
-
-
-
-                                        <input type="hidden" placeholder="" class="form-control" name="refferal_code" value="2519ADKIQP">
-
-
-
-
-
-                                        <input type="hidden" placeholder="" class="form-control" name="cot" value="TFTRQX27568">
-
-
-
-
-                                        <input type="hidden" placeholder="" class="form-control" name="vat" value="HVYURDR89531">
-
-
-
-                                        <input type="hidden" placeholder="" class="form-control" name="tax" value="GY6AQ59033">
-
+                                            <div class="form-group text-start">
+                                            <label class="tx-medium">Lastname</label>
+                                            <input class="form-control" placeholder="Enter your Name" type="text" name="lastname" required="">
+                                        </div>
+                                        
                                         <div class="form-group text-start">
                                             <label class="tx-medium">Username</label>
                                             <input class="form-control" placeholder="Enter Preferred Username" type="text" name="username" required="">
@@ -120,20 +108,6 @@
                                             <label class="tx-medium">Email</label>
                                             <input class="form-control" placeholder="Enter your email" type="email" autocomplete="username" name="email" required="">
                                         </div>
-
-
-                                        <div class="form-group text-start">
-                                            <label class="tx-medium">Gender</label>
-                                            <select class="form-control select2-no-search" name="gender" required="">
-                                                <option label="Select Gender">
-                                                </option>
-                                                <option value="Female">Female</option>
-                                                <option value="Male">Male</option>
-                                                <option value="Others">Others</option>
-                                            </select>
-
-                                        </div>
-
 
                                         <div class="form-group text-start">
                                             <label class="tx-medium">Country</label>
@@ -410,39 +384,20 @@
                                             </select>
                                         </div>
                                         <div class="form-group text-start">
+                                            <label class="tx-medium">Currency</label>
+                                            <select class="form-control select2-no-search" name="currency" required="">
+                                                <option value="select" disabled selected>Choose Your Currency</option>
+                                                <option value="$">USD</option>
+                                                <option value="€">EURO</option>
+                                                <option value="R">RAND</option>
+                                                <option value="R$">REAIS</option>
+                                            </select>
+
+                                        </div>
+                                        <div class="form-group text-start">
                                             <label class="tx-medium">Mobile No.</label>
                                             <input class="form-control" placeholder="Enter Mobile Numeber (Whatsapp Preferred)" type="" name="phone" required="">
                                         </div>
-
-                                        <div class="form-group text-start">
-                                            <label class="tx-medium">Security Question</label>
-                                            <select class="form-control select2-no-search" name="security_question" required="">
-                                                <option selected="" value="">Select Security Question</option>
-                                                <option value="1">What city were you born in?</option>
-                                                <option value="2">What was your high school mascot?</option>
-                                                <option value="3">What is your mother&#039;s maiden name?</option>
-                                                <option value="4">What was the make of your first car?</option>
-                                                <option value="5">What high school did you go to?</option>
-                                                <option value="6">What is the last name of your best friend?</option>
-                                                <option value="7">What is the middle name of your youngest sibling?</option>
-                                                <option value="8">What is the name of the street on which you grew up?</option>
-                                                <option value="9">What is the name of your favorite fictional character?</option>
-                                                <option value="10">What is the name of your favorite pet?</option>
-                                                <option value="11">What is the name of your favorite restaurant?</option>
-                                                <option value="12">What is the title of your favorite book?</option>
-                                                <option value="13">What is your dream job?</option>
-                                                <option value="14">Where did you go on your first date?</option>
-                                            </select>
-                                        </div>
-
-
-                                        <div class="form-group text-start">
-                                            <label class="tx-medium">Question Response</label>
-                                            <input class="form-control" placeholder="Answer to security question" type="text" name="security_answer" required="">
-                                        </div>
-
-
-
 
                                         <div class="form-group text-start">
                                             <label class="tx-medium">Password</label>
@@ -452,7 +407,7 @@
 
                                         <div class="form-group text-start">
                                             <label class="tx-medium">Confirm Password</label>
-                                            <input class="form-control border-end-0" placeholder="Confirm Password" autocomplete="new-password" type="password" data-bs-toggle="password" name="password2" required="">
+                                            <input class="form-control border-end-0" placeholder="Confirm Password" autocomplete="new-password" type="password" data-bs-toggle="password" name="password_confirmation" required="">
                                         </div>
 
                                         <div class="form-group text-start">
