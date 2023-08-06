@@ -24,7 +24,7 @@ Route::view('/faq', 'pages.faq')->name('faq');
 Route::view('/privacy', 'pages.privacy')->name('privacy');
 Route::view('/copy-trader', 'pages.copy-trader')->name('copy-trader');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
