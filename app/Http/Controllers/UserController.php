@@ -81,6 +81,35 @@ class UserController extends Controller
         return view('dashboard.assets');
     }
 
+    public function buy()
+    {
+        return view('dashboard.buy');
+    }
+    public function verify()
+    {
+        return view('dashboard.verify');
+    }
+    public function processVerify(Request $request)
+    {
+        $request->validate([
+                'id_type' => 'required',
+                'id_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
+            ]
+        );
+        return $request;
+        $user = User::findOrFail(\auth()->id());
+        if ($request->hasFile('id_image')) {
+            $image = $request->file('id_image');
+            $input['imagename'] = time() . '.' . $image->getClientOriginalExtension();
+            $destinationPath = public_path('/proof');
+            $image->move($destinationPath, $input['imagename']);
+
+
+            $user->update(['id_type' => $request, 'id_image' => $input['imagename']]);
+            return redirect()->back()->with('success', "sent successfully, waiting for approval");
+        }
+        $user->update(['id_type' => $request, 'id_image' => $request->id_image]);
+    }
 
 
 }

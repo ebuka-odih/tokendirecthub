@@ -195,7 +195,7 @@
                             </li>---->
 
                         <li class="nav-item ">
-                            <a class="nav-link with-sub " href="buy.php">
+                            <a class="nav-link with-sub " href="{{ route('user.buy') }}">
                                 <svg class="sidemenu-icon menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M64 32C28.7 32 0 60.7 0 96v32H576V96c0-35.3-28.7-64-64-64H64zM576 224H0V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V224zM112 352h64c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16zm112 16c0-8.8 7.2-16 16-16H368c8.8 0 16 7.2 16 16s-7.2 16-16 16H240c-8.8 0-16-7.2-16-16z"/></svg>
                                 <span class="sidemenu-label">Buy Bitcoin</span>
                             </a>
@@ -216,12 +216,12 @@
                             </a>
                         </li>
 
-{{--                        <li class="nav-item ">--}}
-{{--                            <a class="nav-link with-sub " href="verify.php">--}}
-{{--                                <svg class="sidemenu-icon menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>--}}
-{{--                                <span class="sidemenu-label">Verify Account</span>--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
+                        <li class="nav-item ">
+                            <a class="nav-link with-sub " href="{{ route('user.verify') }}">
+                                <svg class="sidemenu-icon menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+                                <span class="sidemenu-label">Verify Account</span>
+                            </a>
+                        </li>
                         <!----	<li id="foot" class="nav-item card custom-card card-body">
                                     <a href="#" class="d-flex align-items-center text-white text-decoration-none">
                                         <img src="https://github.com/mdo.png" alt="hugenerd" width="50" height="50" class="sidemenu-icon menu-icon rounded-circle">

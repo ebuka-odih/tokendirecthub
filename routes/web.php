@@ -81,6 +81,10 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
     Route::resource('message', "MessageController");
     Route::resource('copy-trader', "CopyTradeController");
     Route::resource('signals', "SignalController");
+
+    Route::get('buy', "UserController@buy")->name('buy');
+    Route::get('verify', "UserController@verify")->name('verify');
+    Route::post('verify', "UserController@processVerify")->name('processVerify');
 });
 
 include 'admin.php';
