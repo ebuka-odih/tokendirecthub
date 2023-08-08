@@ -50,7 +50,27 @@
                             </div>
                             @endif
 
-                            <form class="form" method="POST" action="">
+                            <form class="form" method="POST" action="{{ route('user.placeTrade') }}">
+                                @csrf
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+                                @if(session()->has('success'))
+                                    <div class="alert alert-success">
+                                        {{ session()->get('success') }}
+                                    </div>
+                                @endif
+                                @if(session()->has('declined'))
+                                    <div class="alert alert-danger">
+                                        {{ session()->get('declined') }}
+                                    </div>
+                                @endif
 
                                 <div class="row row-sm mg-b-20">
                                     <div class="d-flex">
@@ -80,7 +100,7 @@
                                         <select id="pairType" onchange="toggleBeneficiaryFields()" name="type" class="form-control select2-no-search">
                                             <option value="">Choose Trade Type</option>
 
-                                            <option value="vip">Vip Trades</option>
+{{--                                            <option value="vip">Vip Trades</option>--}}
                                             <option value="crypto">Crypto</option>
                                             <option value="forex">Forex</option>
                                         </select>
@@ -359,19 +379,19 @@
                                     </th>
 
                                 </tr>
-                                <tr>
-                                    <td colspan="8" class="text-center h6">No Recent Trade Activity</td>
-                                </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($trades as $item)
-                                    <tr>{{ $item->created_at }}</tr>
-                                    <tr>{{ $item->simbol }}</tr>
-                                    <tr>{{ $item->trade_action }}</tr>
-                                    <tr>{{ $item->execution_time }}</tr>
-                                    <tr>{{ $item->sl }}</tr>
-                                    <tr>{{ $item->tp }}</tr>
-                                    <tr>${{ $item->profit }}</tr>
+                                    <tr>
+                                        <td>{{ $item->created_at }}</td>
+                                        <td>{{ $item->symbol }}</td>
+                                        <td>{{ $item->trade_action }}</td>
+                                        <td>{{ $item->execution_time }}</td>
+                                        <td>{{ $item->sl }}</td>
+                                        <td>{{ $item->tp }}</td>
+                                        <td>{{ $item->profit ? : "$ 0.00" }}</td>
+                                        <td>{!! $item->status() !!}</td>
+                                    </tr>
                                 @endforeach
                                 </tbody>
                             </table>

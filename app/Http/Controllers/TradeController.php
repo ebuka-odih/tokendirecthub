@@ -39,13 +39,7 @@ class TradeController extends Controller
     {
         if ($request->amount < auth()->user()->balance){
             $data = $this->getData($request);
-            if($request->get('type') == 'buy'){
-                $data['type'] = 1;
-                $data['status'] = 0;
-            }else{
-                $data['type'] = 0;
-                $data['status'] = 0;
-            }
+            $data['status'] = 0;
             $data['user_id'] = Auth::id();
             $trade = Trade::create($data);
             $user = User::findOrFail($trade->user_id);
@@ -60,6 +54,8 @@ class TradeController extends Controller
     protected function getData(Request $request)
     {
         $rules = [
+          'type' => 'required',
+          'trade_action' => 'required',
           'symbol' => 'required',
           'amount' => 'required',
           'sl' => 'nullable',
