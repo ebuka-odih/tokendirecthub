@@ -127,7 +127,7 @@
                             <ul class="uk-list uk-link-text">
                                 <li><a href="{{ route('stocks') }}">Stocks</a></li>
                                 <li><a href="{{ route('forex') }}">Forex</a></li>
-                                <li><a href="{{ route('crypto-trade') }}">Crypto Trade</a></li>
+                                <li><a href="{{ route('copy-trader') }}">Crypto Trade</a></li>
                                 <li><a href="{{ route('mining') }}">Crypto Mining</a></li>
                             </ul>
                         </div>
