@@ -393,14 +393,14 @@
 
                             <div class="row row-sm mg-b-20">
                                 <div class="d-flex">
-										<span class="text-dark tx-semibold">
+                                    <span class="text-dark tx-semibold">
 
-										  	<div class="button">
-                                              <input type="radio" id="a25" value="BUY" name="trade_action" required=""/>
-                                              <label class="btn btn-outline-primary btn-lg btn-block rounded-12 mt-12" for="a25">BUY</label>
-                                            </div>
+                                        <div class="button">
+                                          <input type="radio" id="a25" value="BUY" name="trade_action" required=""/>
+                                          <label class="btn btn-outline-primary btn-lg btn-block rounded-12 mt-12" for="a25">BUY</label>
+                                        </div>
 
-										    </span>
+                                        </span>
 
                                     <div class="ms-auto fs-14 text-dark tx-semibold">
 
@@ -424,7 +424,8 @@
                                         <option value="crypto">Crypto</option>
                                         <option value="forex">Forex</option>
                                     </select>
-                                </div></div>
+                                </div>
+                            </div>
 
                             <div id="beneficiaryField1" style="display:none;">
                                 <div class="row row-sm mg-b-20">

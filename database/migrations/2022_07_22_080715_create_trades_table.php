@@ -18,6 +18,7 @@ class CreateTradesTable extends Migration
             $table->timestamps();
             $table->bigInteger('user_id');
             $table->string('symbol');
+            $table->string('trade_action');
             $table->string('type');
             $table->double('amount');
             $table->string('sl')->nullable();

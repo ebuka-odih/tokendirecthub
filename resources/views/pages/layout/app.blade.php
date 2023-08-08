@@ -125,20 +125,20 @@
                         <div>
                             <h4><span>Markets</span></h4>
                             <ul class="uk-list uk-link-text">
-                                <li><a href="stocks.html">Stocks</a></li>
-                                <li><a href="forex.html">Forex</a></li>
-                                <li><a href="crypto-trade.html">Crypto Trade</a></li>
-                                <li><a href="mining.html">Crypto Mining</a></li>
+                                <li><a href="{{ route('stocks') }}">Stocks</a></li>
+                                <li><a href="{{ route('forex') }}">Forex</a></li>
+                                <li><a href="{{ route('crypto-trade') }}">Crypto Trade</a></li>
+                                <li><a href="{{ route('mining') }}">Crypto Mining</a></li>
                             </ul>
                         </div>
 
                         <div>
                             <h4><span>Company</span></h4>
                             <ul class="uk-list uk-link-text">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="contact.html">Contact us</a></li>
-                                <li><a href="register.html">Start Now</a></li>
+                                <li><a href="{{ route('index') }}">Home</a></li>
+                                <li><a href="{{ route('about') }}">About Us</a></li>
+                                <li><a href="{{ route('contact') }}">Contact us</a></li>
+                                <li><a href="{{ route('register') }}">Start Now</a></li>
                             </ul>
                         </div>
                     </div>
@@ -191,10 +191,10 @@
             <div class="uk-grid">
                 <div class="uk-width-3-4@m uk-visible@m">
                     <ul class="uk-subnav uk-subnav-divider">
-                        <li><a href="terms.html">Terms &amp; Conditions</a></li>
-                        <li><a href="privacy.html">Privacy</a></li>
-                        <li><a href="faq.html">FAQs</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="{{ route('terms') }}">Terms &amp; Conditions</a></li>
+                        <li><a href="{{ route('privacy') }}">Privacy</a></li>
+                        <li><a href="{{ route('faq') }}">FAQs</a></li>
+                        <li><a href="{{ route('contact') }}">Contact</a></li>
                     </ul>
                 </div>
                 <div class="uk-width-expand@m uk-text-right@m">

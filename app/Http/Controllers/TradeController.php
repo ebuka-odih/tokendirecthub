@@ -2,13 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Deposit;
 use App\Trade;
 use App\User;
+use App\Withdraw;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class TradeController extends Controller
 {
+    public function trade()
+    {
+        $trades = Trade::whereUserId(\auth()->id())->where('status', 0)->latest()->paginate(20);
+        $withdrawal = Withdraw::whereUserId(\auth()->id())->where('status', 1)->sum('amount');
+        $deposits = Deposit::whereUserId(\auth()->id())->where('status', 1)->sum('amount');
+        return view('dashboard.trades.trades', compact('trades', 'deposits', 'withdrawal'));
+    }
     public function history()
     {
         $counts = Trade::whereUserId(\auth()->id())->where('status', 0)->count();
@@ -24,11 +33,7 @@ class TradeController extends Controller
         $close_trades = Trade::whereUserId(\auth()->id())->where('status', 1)->latest()->paginate(10);
         return view('dashboard.trade.close-trades', compact('close_trades', 'close_counts', 'counts'));
     }
-    public function trade()
-    {
-        $trades = Trade::whereUserId(\auth()->id())->where('status', 0)->latest()->paginate(8);
-        return view('dashboard.trade.trade-room', compact('trades'));
-    }
+
 
     public function placeTrade(Request $request)
     {
