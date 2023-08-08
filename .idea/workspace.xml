@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="790db171-8dfb-4ba3-9fe2-cc7a1ea19055" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TradeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TradeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/trades/trades.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/trades/trades.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +175,7 @@
       <workItem from="1690968573159" duration="30104000" />
       <workItem from="1691179123030" duration="6420000" />
       <workItem from="1691262883177" duration="15704000" />
-      <workItem from="1691432447682" duration="8502000" />
+      <workItem from="1691432447682" duration="9850000" />
     </task>
     <servers />
   </component>
@@ -198,11 +200,6 @@
           <url>file://$PROJECT_DIR$/resources/views/dashboard/copy-traders/copied-trades.blade.php</url>
           <line>41</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/dashboard/index.blade.php</url>
-          <line>478</line>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/dashboard/trades/trades.blade.php</url>

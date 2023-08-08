@@ -383,13 +383,34 @@
                     </div>
 
                     <div class="card-body">
+                        @if(auth()->user()->balance < 1)
+                            <div class="alert alert-info fade show" role="alert">
+                                <center style="color:red;">INSUFFICIENT TRADING BALANCE.</center>
 
-                        <div class="alert alert-info fade show" role="alert">
-                            <center style="color:red;">INSUFFICIENT TRADING BALANCE.</center>
+                            </div>
+                        @endif
 
-                        </div>
-
-                        <form class="form" method="POST" action="">
+                        <form class="form" method="POST" action="{{ route('user.placeTrade') }}">
+                            @csrf
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                            @if(session()->has('success'))
+                                <div class="alert alert-success">
+                                    {{ session()->get('success') }}
+                                </div>
+                            @endif
+                            @if(session()->has('declined'))
+                                <div class="alert alert-danger">
+                                    {{ session()->get('declined') }}
+                                </div>
+                            @endif
 
                             <div class="row row-sm mg-b-20">
                                 <div class="d-flex">
@@ -404,7 +425,7 @@
 
                                     <div class="ms-auto fs-14 text-dark tx-semibold">
 
-                                        <div class="button">
+                                        <div style="text-align: right" class="button">
                                             <input type="radio" id="a50" value="SELL" name="trade_action" required="" />
                                             <label class="btn btn-outline-primary btn-lg btn-block rounded-12 mt-12" for="a50">SELL</label>
                                         </div>
@@ -413,14 +434,13 @@
                                 </div>
                             </div>
 
-
                             <div class="row row-sm mg-b-20">
                                 <div class="col-lg-12">
                                     <p class="mg-b-10 tx-semibold">Type</p>
-                                    <select id="withdrawalMethod" name="trade_type" class="form-control select2-no-search">
+                                    <select id="pairType" onchange="toggleBeneficiaryFields()" name="type" class="form-control select2-no-search">
                                         <option value="">Choose Trade Type</option>
 
-                                        <option value="vip">Vip Trades</option>
+                                        {{--                                            <option value="vip">Vip Trades</option>--}}
                                         <option value="crypto">Crypto</option>
                                         <option value="forex">Forex</option>
                                     </select>
@@ -431,7 +451,7 @@
                                 <div class="row row-sm mg-b-20">
                                     <div class="col-lg-12">
                                         <p class="mg-b-10 tx-semibold">Crypto Assets</p>
-                                        <select name="currency_crypto" class="form-control select2-no-search" >
+                                        <select name="symbol" class="form-control select2-no-search" >
 
                                             <option value="ETH/USD">ETH/USD</option>
                                             <option value="BTC/USD">BTC/USD </option>
@@ -464,8 +484,7 @@
 
                                     </div>
                                     <div class="d-flex">
-                                        <span class="text-dark tx-semibold">Balance ~ <font color="teal">$ 0.00</font></span>
-
+                                        <span class="text-dark tx-semibold">Balance ~ <font color="teal">$ @money(auth()->user()->balance)</font></span>
 
                                     </div>
                                 </div>
@@ -476,7 +495,7 @@
                                 <div class="row row-sm mg-b-20">
                                     <div class="col-lg-12">
                                         <p class="mg-b-10 tx-semibold">Forex Assets</p>
-                                        <select name="currency_pair" class="form-control select2-no-search">
+                                        <select name="symbol" class="form-control select2-no-search">
 
                                             <option value="AUD/CAD">AUD/CAD </option>
                                             <option value="AUD/CHF">AUD/CHF </option>
@@ -537,7 +556,7 @@
 
                                     </div>
                                     <div class="d-flex">
-                                        <span class="text-dark tx-semibold">Balance ~ <font color="teal">$ 0.00</font></span>
+                                        <span class="text-dark tx-semibold">Balance ~ <font color="teal">$ @money(auth()->user()->balance)</font></span>
 
 
                                     </div>
@@ -545,7 +564,6 @@
 
 
                             </div>
-
 
 
                             <div id="beneficiaryField3" style="display:none;">
@@ -570,10 +588,6 @@
                             </div>
 
 
-
-
-
-                            <input type="hidden" class="form-control" name="email" value="ojarimore@gmail.com">
                             <div class="row row-sm mg-b-20">
                                 <div class="col-lg-12">
                                     <div class="form-group text-start">
@@ -588,7 +602,7 @@
                             <div class="row row-sm mg-b-20">
                                 <div class="col-lg-12">
                                     <p class="mg-b-10 tx-semibold">Lot Size</p>
-                                    <select id="inputState" name="lot_size" class="form-control select2-no-search" required="">
+                                    <select id="inputState" name="leverage" class="form-control select2-no-search" required="">
                                         <option value="2">
                                             2 LS
                                         </option>
@@ -611,7 +625,7 @@
                                 <div class="col-lg-12">
                                     <div class="form-group text-start">
                                         <label class="tx-medium">Take Profit</label>
-                                        <input class="form-control" name="take_profit" placeholder="1.0013" type="text" required>
+                                        <input class="form-control" name="tp" placeholder="1.0013" type="text" required>
                                     </div>
 
                                 </div>
@@ -622,7 +636,7 @@
                                 <div class="col-lg-12">
                                     <div class="form-group text-start">
                                         <label class="tx-medium">Stop Loss</label>
-                                        <input class="form-control" name="stop_loss" placeholder="1.0013" type="text" required>
+                                        <input class="form-control" name="sl" placeholder="1.0013" type="text" required>
                                     </div>
 
                                 </div>
@@ -632,7 +646,7 @@
                             <div class="row row-sm mg-b-20">
                                 <div class="col-lg-12">
                                     <p class="mg-b-10 tx-semibold">Time in Force</p>
-                                    <select class="form-control select2-no-search" name="time">
+                                    <select class="form-control select2-no-search" name="execution_time">
                                         <option value="5">
                                             5 mintues
                                         </option>
@@ -676,7 +690,7 @@
                     <div class="card-body pb-2">
                         <div class="table-responsive">
                             <table class="table table-borderless text-nowrap text-md-nowrap table-hover mg-b-0">
-                                <tbody>
+                                <thead>
                                 <tr>
                                     <th>
                                         Type
@@ -697,16 +711,29 @@
                                         TP
                                     </th>
                                     <th>
-                                        Result
+                                        Results
                                     </th>
                                     <th>
                                         Details
                                     </th>
 
                                 </tr>
-                                <tr>
-                                    <td colspan="8" class="text-center h6">No Recent Trade Activity</td>
-                                </tr>                                        </table>
+                                </thead>
+                                <tbody>
+                                @foreach($trades as $item)
+                                    <tr>
+                                        <td>{{ $item->created_at }}</td>
+                                        <td>{{ $item->symbol }}</td>
+                                        <td>{{ $item->trade_action }}</td>
+                                        <td>{{ $item->execution_time }}</td>
+                                        <td>{{ $item->sl }}</td>
+                                        <td>{{ $item->tp }}</td>
+                                        <td>{{ $item->profit ? : "$ 0.00" }}</td>
+                                        <td>{!! $item->status() !!}</td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
                         </div>
 
                     </div>
@@ -795,5 +822,21 @@
         </div>
     </div>
 </div>
+
+<script>
+    function toggleBeneficiaryFields() {
+        const pairType = document.getElementById('pairType').value;
+        const beneficiaryField1 = document.getElementById('beneficiaryField1');
+        const beneficiaryField2 = document.getElementById('beneficiaryField2');
+
+        if (pairType === 'crypto') {
+            beneficiaryField1.style.display = 'block';
+            beneficiaryField2.style.display = 'none';
+        } else if (pairType === 'forex') {
+            beneficiaryField1.style.display = 'none';
+            beneficiaryField2.style.display = 'block';
+        }
+    }
+</script>
 
 @endsection

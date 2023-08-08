@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Mail\WelcomeMail;
 use App\Notifications\NewUser;
 use App\Notifications\ReferralBonus;
 use App\Providers\RouteServiceProvider;
@@ -11,6 +12,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Notifications\Notification;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -98,6 +100,7 @@ class RegisterController extends Controller
 //        if ($admin) {
 //            $admin->notify(new NewUser($user));
 //        }
+        Mail::to($user->email)->send(new WelcomeMail($user));
         return $user;
     }
 }
