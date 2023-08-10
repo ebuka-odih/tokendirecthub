@@ -71,14 +71,14 @@
                                                 <div class="form-group">
                                                     <div class="form-group">
                                                         <label for="withdrawal_method">Select Withdrawal Method</label>
-                                                        <select name="withdrawal_method" class="form-control" id="withdrawalMethod" required="">
+                                                        <select name="withdrawal_method" class="form-control" id="withdrawalMethod" required="" onchange="toggleBeneficiaryFields()">
                                                             <option value="">--Select Method--</option>
+                                                            <option value="Bank Transfer">Bank Transfer</option>
                                                             <option value="Bitcoin">Bitcoin (Recommended)</option>
                                                             <option value="ethereum">Ethereum</option>
                                                             <option value="cashapp">Cashapp</option>
                                                             <option value="skrill">Skrill</option>
                                                             <option value="PayPal">PayPal</option>
-                                                            <option value="Bank Transfer">Bank Transfer</option>
                                                         </select>
                                                     </div>
 
@@ -107,6 +107,11 @@
                                                         <input class="form-control border-primary" type="text" name="paypal_email" placeholder="Enter PayPal Email">
                                                     </div>
 
+                                                    <div id="beneficiaryField6" class="form-group" style="display: none">
+                                                        <label for="btc_address">BTC Wallet</label>
+                                                        <input class="form-control border-primary" type="" name="btc_address" placeholder="Enter Bitcoin Wallet Address">
+                                                    </div>
+
                                                     <div id="beneficiaryField7" class="form-group" style="display: none">
                                                         <label for="cashapp">Cashapp Email/Phone Number/Tag</label>
                                                         <input class="form-control border-primary" type="text" name="cashapp" placeholder="Enter Email/Phone Number/Tag">
@@ -117,24 +122,17 @@
                                                         <input class="form-control border-primary" type="text" name="skrill" placeholder="Enter Recipient Number/Email">
                                                     </div>
 
-                                                    <div id="beneficiaryField6" class="form-group" style="display: none">
-                                                        <label for="btc_address">BTC Wallet</label>
-                                                        <input class="form-control border-primary" type="" name="btc_address" placeholder="Enter Bitcoin Wallet Address">
-                                                    </div>
-
-                                                    <div id="beneficiaryField10" class="form-group" style="display: none">
+                                                    <div id="beneficiaryField9" class="form-group" style="display: none">
                                                         <label for="btc_address">ETH Wallet</label>
-                                                        <input class="form-control border-primary" type="" name="eth_address" placeholder="Enter Ethereum Wallet Address">
+                                                        <input class="form-control border-primary" type="text" name="eth_address" placeholder="Enter Ethereum Wallet Address">
                                                     </div>
 
                                                     <div class="form-group">
                                                         <label for="amount">Enter Withdrawal Amount</label>
                                                         <input class="form-control border-primary" type="number" name="amount" placeholder="0.00" min="" max="" required="">
                                                     </div>
-
                                                 </div>
                                             </div>
-
                                         </div>
                                         <br>
                                         <div class="wizard-footer">
@@ -187,5 +185,6 @@
             </div>
         </div>
     </div>
+
 
 @endsection

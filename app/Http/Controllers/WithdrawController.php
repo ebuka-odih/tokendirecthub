@@ -44,25 +44,22 @@ class WithdrawController extends Controller
             'btc_address' => 'nullable',
             'eth_address' => 'nullable',
         ]);
-        return $request;
         $withdraw = new Withdraw();
         if ($request->amount < \auth()->user()->balance || $request->amount < \auth()->user()->profit){
             if ($request->amount >= 50){
                 $withdraw->user_id = Auth::id();
                 $withdraw->amount = $request->amount;
                 $withdraw->withdrawal_method = $request->withdrawal_method;
-                $withdraw->address = $request->address;
                 $withdraw->bank = $request->bank;
                 $withdraw->acct_name = $request->acct_name;
                 $withdraw->acct_num = $request->acct_num;
                 $withdraw->swift_code = $request->swift_code;
-
+                
                 $withdraw->paypal_email = $request->paypal_email;
                 $withdraw->cashapp = $request->cashapp;
                 $withdraw->skrill = $request->skrill;
                 $withdraw->btc_address = $request->btc_address;
                 $withdraw->eth_address = $request->eth_address;
-
                 $user = User::findOrFail($withdraw->user_id);
                 $data = ['withdraw' => $withdraw, 'user' => $user];
                 $withdraw->save();
@@ -70,7 +67,7 @@ class WithdrawController extends Controller
                 Mail::to(env('MAIL_FROM_NAME'))->send( new AdminWithdrawAlert($data));
                 return redirect()->back()->with('success_message', 'Your withdrawal request has been sent successfully, awaiting approval');
             }
-            return redirect()->back()->with('nop', "You can't withdraw less than 100 USD");
+            return redirect()->back()->with('nop', "You can't withdraw less than 50 USD");
         }
         return redirect()->back()->with('low_balance', "Insufficient Balance");
 
