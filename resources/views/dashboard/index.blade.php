@@ -22,7 +22,7 @@
                                         <div class="transaction-details d-flex">
                                             <div>
                                                 <span class="text-dark tx-bold-12"> Total Balance</span>
-                                                <h5 class="text-muted tx-bold-12" id="balance">$ @money(auth()->user()->balance)</h5></div>
+                                                <h5 class="text-muted tx-bold-12" id="balance">{{ auth()->user()->currency }}@money(auth()->user()->balance)</h5></div>
 
                                         </div>
 
@@ -44,7 +44,7 @@
                                         <div class="transaction-details d-flex">
                                             <div>
                                                 <span class="text-dark tx-bold-12"> Total Profit</span>
-                                                <h5 class="text-muted tx-bold-12" id="profit">$ @money(auth()->user()->profit)</h5></div>
+                                                <h5 class="text-muted tx-bold-12" id="profit">{{ auth()->user()->currency }}@money(auth()->user()->profit)</h5></div>
 
                                         </div>
 
@@ -67,7 +67,7 @@
                                         <div class="transaction-details d-flex">
                                             <div>
                                                 <span class="text-dark tx-bold-12"> Total Bonus</span>
-                                                <h5 class="text-muted tx-bold-12" id="bonus"> $ @money(auth()->user()->ref_bonus)</h5></div>
+                                                <h5 class="text-muted tx-bold-12" id="bonus"> {{ auth()->user()->currency }}@money(auth()->user()->ref_bonus)</h5></div>
 
                                         </div>
 
@@ -90,7 +90,7 @@
                                         <div class="transaction-details d-flex">
                                             <div>
                                                 <span class="text-dark tx-bold-12"> Total Invested</span>
-                                                <h5 class="text-muted tx-bold-12" id="deposit"> $ @money($investment)</h5></div>
+                                                <h5 class="text-muted tx-bold-12" id="deposit"> {{ auth()->user()->currency }} @money($investment)</h5></div>
 
                                         </div>
 
@@ -120,78 +120,9 @@
                         <ul id="mobileshow" class="tabs-menu nav mb-0">
                             <li class="">
                                 <a href="{{ route('user.deposit') }}"  class="active btn btn-info">Deposit</a> &nbsp; &nbsp;
-                                <a href="#tab21" data-bs-toggle="tab" class="btn ripple btn-dark-transparent">Withdraw</a>
+                                <a href="{{ route('user.withdraw') }}" class="btn ripple btn-dark-transparent">Withdraw</a>
 
                         </ul>
-                        <div class="card custom-card">
-                            <div class="card-body">
-                                <div class="card-pay">
-                                    <div class="tab-content">
-                                        <div class="tab-pane active show br-3 mb-2" id="tab20">
-                                            <div class="table-responsive">
-                                                <table class="table table-borderless text-nowrap text-md-nowrap table-hover mg-b-0">
-                                                    <tbody>
-                                                    <tr>
-                                                        <td><img src="{{ asset('img/btc.svg') }}" class="wd-25 ht-20 me-3 my-auto" alt=""></td>
-
-                                                        <td>$ 0.00 BTC</td>
-                                                        <td><span id="btc-balance"></span></td>
-                                                        <td>
-                                                            <a href="{{ route('user.deposit') }}"  class="btn ripple btn-primary-transparent">Deposit</a>
-                                                            <a href="{{ route('user.withdraw') }}" class="btn ripple btn-dark-transparent">Withdraw</a>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th scope="row"><img src="{{ asset('img/eth.svg') }}" class="wd-25 ht-20 me-3 my-auto" alt=""></th>
-
-                                                        <td><span id="eth-balance-eq"></span>$ 0.00 ETH</td>
-                                                        <td><span id="eth-balance"></span></td>
-                                                        <td>
-                                                            <a href="{{ route('user.deposit') }}"   class="btn ripple btn-primary-transparent">Deposit</a>
-                                                            <a href="{{ route('user.withdraw') }}" class="btn ripple btn-dark-transparent">Withdraw</a>
-                                                        </td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                        <div class="tab-pane" id="tab21">
-
-                                            <div class="table-responsive">
-                                                <table class="table table-borderless text-nowrap text-md-nowrap table-hover mg-b-0">
-                                                    <tbody>
-                                                    <tr>
-                                                        <td><img src="{{ asset('img/btc.svg') }}" class="wd-25 ht-20 me-3 my-auto" alt=""></td>
-
-                                                        <td>0.00000000 BTC</td>
-                                                        <td>$ 0.00</td>
-                                                        <td>
-                                                            <a href="{{ route('user.withdraw') }}" class="btn ripple btn-dark-transparent">Withdraw</a>
-                                                            <a href="{{ route('user.deposit') }}"  class="btn ripple btn-primary-transparent">Deposit</a>
-
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th scope="row"><img src="{{ asset('img/eth.svg') }}" class="wd-25 ht-20 me-3 my-auto" alt=""></th>
-
-                                                        <td>0.00 ETH</td>
-                                                        <td>$ 0.00</td>
-                                                        <td>
-                                                            <a href="{{ route('user.withdraw') }}" class="btn ripple btn-dark-transparent">Withdraw</a>
-                                                            <a href="{{ route('user.deposit') }}"  class="btn ripple btn-primary-transparent">Deposit</a>
-
-                                                        </td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
                     <div class="col-sm-12 col-lg-12 col-xl-12 col-xxl-12">
@@ -484,7 +415,7 @@
 
                                     </div>
                                     <div class="d-flex">
-                                        <span class="text-dark tx-semibold">Balance ~ <font color="teal">$ @money(auth()->user()->balance)</font></span>
+                                        <span class="text-dark tx-semibold">Balance ~ <font color="teal">{{ auth()->user()->currency }} @money(auth()->user()->balance)</font></span>
 
                                     </div>
                                 </div>
@@ -556,7 +487,7 @@
 
                                     </div>
                                     <div class="d-flex">
-                                        <span class="text-dark tx-semibold">Balance ~ <font color="teal">$ @money(auth()->user()->balance)</font></span>
+                                        <span class="text-dark tx-semibold">Balance ~ <font color="teal">{{ auth()->user()->currency }} @money(auth()->user()->balance)</font></span>
 
 
                                     </div>
@@ -568,21 +499,7 @@
 
                             <div id="beneficiaryField3" style="display:none;">
 
-                                <div class="row row-sm mg-b-20">
-                                    <div class="col-lg-12">
-                                        <p class="mg-b-10 tx-semibold">VIP SELECTED TRADES</p>
 
-
-                                        <select name="currency_vip" class="form-control select2-no-search" >
-                                            <option value="VIP SELECTED TRADES">ALL VIP SELECTED ASSETS </option></select>
-
-                                    </div>
-                                    <div class="d-flex">
-                                        <span class="text-dark tx-semibold">Balance ~ <font color="teal">$ 0.00</font></span>
-
-
-                                    </div>
-                                </div>
 
 
                             </div>
@@ -728,7 +645,7 @@
                                         <td>{{ $item->execution_time }}</td>
                                         <td>{{ $item->sl }}</td>
                                         <td>{{ $item->tp }}</td>
-                                        <td>{{ $item->profit ? : "$ 0.00" }}</td>
+                                        <td>{{ auth()->user()->currency }}{{ $item->profit ? : "0.00" }}</td>
                                         <td>{!! $item->status() !!}</td>
                                     </tr>
                                 @endforeach
@@ -758,7 +675,7 @@
                                         <div class="transaction-details d-flex">
                                             <div>
                                                 <span class="text-dark tx-bold-12"> Total Deposits</span>
-                                                <h5 class="text-muted tx-bold-12"> $ @money($deposits)</h5></div>
+                                                <h5 class="text-muted tx-bold-12"> {{ auth()->user()->currency }} @money($deposits)</h5></div>
                                             <div class="ms-auto fs-14 text-danger font-weight-normal">
                                                 <a href="{{ route('user.deposit') }}" class="btn ripple btn-warning-transparent">Deposit</a>
                                             </div>
@@ -777,7 +694,7 @@
                                         <div class="transaction-details d-flex">
                                             <div>
                                                 <span class="text-dark tx-bold-12"> Total Withdrawals</span>
-                                                <h5 class="text-muted tx-bold-12"> $ @money($withdrawal)</h5></div>
+                                                <h5 class="text-muted tx-bold-12"> {{ auth()->user()->currency }} @money($withdrawal)</h5></div>
                                             <div class="ms-auto fs-14 text-danger font-weight-normal">
                                                 <a href="{{ route('user.withdraw') }}" class="btn ripple btn-warning-transparent">New</a>
                                             </div>

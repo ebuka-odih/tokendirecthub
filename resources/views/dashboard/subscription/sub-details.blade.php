@@ -20,7 +20,7 @@
 
 
             <div class="alert alert-info fade show" role="alert">
-                <center style="color:green;">Bal:	$@money(auth()->user()->balance)</center>
+                <center style="color:green;">Bal:	{{ auth()->user()->currency }}@money(auth()->user()->balance)</center>
 
             </div>
 

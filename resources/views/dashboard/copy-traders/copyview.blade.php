@@ -13,7 +13,7 @@
 
 
     <div class="alert alert-info fade show" role="alert">
-        <center style="color:;">MINIMAL COPY TRADE AMOUNT: $ 500.00</center>
+        <center style="color:;">MINIMAL COPY TRADE AMOUNT: {{ auth()->user()->currency }} 500.00</center>
 
     </div>
 

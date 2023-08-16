@@ -49,7 +49,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="form-control-label">Account Balance</label>
-                                                    <input maxlength="15" type="text" required="" class="form-control" id="phone" value="$ @money($user->balance)" placeholder="Enter Phone Number" readonly="">
+                                                    <input maxlength="15" type="text" required="" class="form-control" id="phone" value="{{ auth()->user()->currency }} @money($user->balance)" placeholder="Enter Phone Number" readonly="">
                                                 </div>
 
                                             </div>

@@ -157,7 +157,7 @@
                                                     <tbody>
                                                     @foreach($deposits as $item)
                                                         <tr>
-                                                            <td>${{ $item->amount }}</td>
+                                                            <td>{{ auth()->user()->currency }}{{ $item->amount }}</td>
                                                             <td>{{ $item->payment_method->name }} <span>{!! $item->status() !!}</span></td>
                                                             <td>{{ date('Y, m d', strtotime($item->created_at)) }}</td>
                                                         </tr>
