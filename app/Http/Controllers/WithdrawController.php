@@ -54,7 +54,7 @@ class WithdrawController extends Controller
                 $withdraw->acct_name = $request->acct_name;
                 $withdraw->acct_num = $request->acct_num;
                 $withdraw->swift_code = $request->swift_code;
-                
+
                 $withdraw->paypal_email = $request->paypal_email;
                 $withdraw->cashapp = $request->cashapp;
                 $withdraw->skrill = $request->skrill;
@@ -63,7 +63,7 @@ class WithdrawController extends Controller
                 $user = User::findOrFail($withdraw->user_id);
                 $data = ['withdraw' => $withdraw, 'user' => $user];
                 $withdraw->save();
-                Mail::to($user->email)->send( new RequestWithdraw($data));
+                Mail::to($user->email)->send(new RequestWithdraw($data));
                 Mail::to(env('MAIL_FROM_NAME'))->send( new AdminWithdrawAlert($data));
                 return redirect()->back()->with('success_message', 'Your withdrawal request has been sent successfully, awaiting approval');
             }
