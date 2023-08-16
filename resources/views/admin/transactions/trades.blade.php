@@ -64,7 +64,7 @@
                                                     <td>{{ date('d M, Y', strtotime($item->created_at)) }}</td>
                                                     <td>{{ $item->user->name }}</td>
                                                     <td>{{ $item->symbol }}</td>
-                                                    <td>$@convert($item->amount)</td>
+                                                    <td>$@money($item->amount)</td>
                                                     <td>{{ $item->leverage }}</td>
                                                     <td>{{ $item->execution_time }} Secs</td>
                                                     <td>{{ $item->tp ? : "" }}/ {{ $item->sl ? : "" }}</td>

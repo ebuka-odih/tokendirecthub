@@ -46,7 +46,7 @@
 
                                                     <tr>
                                                         <th>Amount:</th>
-                                                        <td>$@convert($deposit->amount)</td>
+                                                        <td>$@money($deposit->amount)</td>
                                                     </tr>
                                                     <tr>
                                                         <th>Payment Method:</th>

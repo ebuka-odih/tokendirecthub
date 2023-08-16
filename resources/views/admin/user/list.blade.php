@@ -40,7 +40,7 @@
                                <tr>
                                    <th class="text-center" scope="row">{{ $index + 1 }}</th>
                                    <td class="fw-semibold">
-                                       {{ $item->fullname() }} ($@convert($item->balance))
+                                       {{ $item->fullname() }} ($@money($item->balance))
                                    </td>
                                    <td class="fw-semibold">
                                        {{ $item->email }}

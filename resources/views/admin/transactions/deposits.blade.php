@@ -66,7 +66,7 @@
                                                         <td class="fw-semibold">
                                                             {{ date('d-M-y', strtotime($item->created_at)) }}
                                                         </td>
-                                                        <td>$@convert($item->amount)</td>
+                                                        <td>$@money($item->amount)</td>
                                                         <td>
                                                             {!! $item->adminStatus() !!}
                                                         </td>

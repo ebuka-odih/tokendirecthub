@@ -54,7 +54,7 @@
                                                 <tr class="odd">
                                                     <td class="fw-semibold"> {{ date('d-M-y', strtotime($item->created_at)) }}</td>
                                                     <td class="fw-semibold">{{ optional($item->user)->fullname() }} </td>
-                                                    <td class="fw-semibold">$ {{ $item->amount }}</td>
+                                                    <td class="fw-semibold">$@money($item->amount) </td>
                                                     {{--                                                <td class="d-none d-sm-table-cell"> {{ $item->withdraw_method->acctLabel() }}</td>--}}
                                                     <td class="d-none d-sm-table-cell"> {!! $item->adminStatus() !!}</td>
                                                     <td class="d-none d-sm-table-cell text-success"> {{ $item->account() }}</td>
