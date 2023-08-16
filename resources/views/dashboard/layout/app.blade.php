@@ -12,7 +12,7 @@
     <link rel="icon" href="../main/assets/img/brand/favicon.ico" type="image/x-icon" />
 
     <!-- Title -->
-    <title>Whirl Wind Invts - Trading Center</title>
+    <title>{{ env('APP_NAME') }} - Trading Center</title>
 
     <!-- Bootstrap css-->
     <link id="style" href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
