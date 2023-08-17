@@ -68,15 +68,15 @@
                 </a>
                 <div class="hor-logo">
                     <a class="main-logo" href="{{ route('index') }}">
-                        <img src="../logo.png" class="header-brand-img desktop-logo" alt="logo">
-                        <img src="../logo.png" class="header-brand-img desktop-logo-dark" alt="logo">
+                        <img src="{{ asset('img2/logo.png') }}" class="header-brand-img desktop-logo" alt="logo">
+                        <img src="{{ asset('img2/logo.png') }}" class="header-brand-img desktop-logo-dark" alt="logo">
                     </a>
                 </div>
             </div>
             <div class="main-header-center">
                 <div class="responsive-logo">
-                    <a href="{{ route('index') }}"><img src="../logo.png" width="70%" class="mobile-logo" alt="logo"></a>
-                    <a href="{{ route('index') }}"><img src="../logo.png" width="70%" class="mobile-logo-dark" alt="logo"></a>
+                    <a href="{{ route('index') }}"><img src="{{ asset('img2/logo.png') }}" width="70%" class="mobile-logo" alt="logo"></a>
+                    <a href="{{ route('index') }}"><img src="{{ asset('img2/logo.png') }}" width="70%" class="mobile-logo-dark" alt="logo"></a>
                 </div>
             </div>
             <div class="main-header-right">
