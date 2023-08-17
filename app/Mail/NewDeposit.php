@@ -30,7 +30,7 @@ class NewDeposit extends Mailable
     public function build()
     {
         return $this->markdown('emails.new-deposit-alert')
-            ->from('noreply@tradingpoolfx.com', "TradingPoolFX")
-            ->subject('New Deposit '.$this->data['deposit']->transId());
+            ->from(env('MAIL_FROM_ADDRESS'), env('APP_NAME'))
+            ->subject(env('APP_NAME'));
     }
 }

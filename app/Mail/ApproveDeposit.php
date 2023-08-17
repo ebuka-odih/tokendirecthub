@@ -30,7 +30,7 @@ class ApproveDeposit extends Mailable
     public function build()
     {
         return $this->markdown('emails.approveDeposit')
-            ->subject('TradingPoolFX')
-            ->from('noreply@tradingpoolfx.com');
+            ->from(env('MAIL_FROM_ADDRESS'), env('APP_NAME'))
+            ->subject(env('APP_NAME'));
     }
 }

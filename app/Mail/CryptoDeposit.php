@@ -30,7 +30,7 @@ class CryptoDeposit extends Mailable
     public function build()
     {
         return $this->markdown('emails.crypto-deposit')
-            ->subject('TradingPoolFX')
-            ->from('noreply@tradingpoolfx.com', "TradingPoolFx");
+            ->from(env('MAIL_FROM_ADDRESS'), env('APP_NAME'))
+            ->subject(env('APP_NAME'));
     }
 }
