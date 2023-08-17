@@ -75,8 +75,8 @@
             </div>
             <div class="main-header-center">
                 <div class="responsive-logo">
-                    <a href="{{ route('index') }}"><img src="{{ asset('img2/logo.png') }}" width="70%" class="mobile-logo" alt="logo"></a>
-                    <a href="{{ route('index') }}"><img src="{{ asset('img2/logo.png') }}" width="70%" class="mobile-logo-dark" alt="logo"></a>
+                    <a href="{{ route('index') }}"><img src="{{ asset('img2/logo.png') }}" width="40%" class="mobile-logo" alt="logo"></a>
+                    <a href="{{ route('index') }}"><img src="{{ asset('img2/logo.png') }}" width="40%" class="mobile-logo-dark" alt="logo"></a>
                 </div>
             </div>
             <div class="main-header-right">
@@ -85,7 +85,7 @@
                 <div class="dropdown d-flex main-profile-menu">
                     <a class="d-flex" href="javascript:;">
 							<span class="main-img-user">
-								<img alt="avatar" src="img/user.png">
+								<img alt="avatar" src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o=">
 							</span>
                     </a>
                     <div class="dropdown-menu">
