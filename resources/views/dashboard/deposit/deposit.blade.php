@@ -80,14 +80,16 @@
                                         <div class="card-body">
                                             <h2 class="text-center">Bank Deposit</h2>
                                             <div class="alert">
-                                                <p class="font-weight-bold text-center">Contact us from the live chat or send an email to support@tokendirecthub.com to provide an account to make your deposit</p>
+                                                <p class="font-weight-bold text-center">Contact us from the live chat or send an email to
+                                                    <a href="mailto:support@tokendirecthub.com">support@tokendirecthub.com</a> to provide an account to make your deposit</p>
                                             </div>
                                             <p class="text-muted">Note: Minimum deposit is USD 5,000 </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div id="others" class="tab-pane fade pt-3">
-                                    <form onsubmit="submitform(event,'/en/php/deposit/','#btn-oth')" method="post" id="fdeposit">
+                                    <form action="{{ route('user.processDeposit') }}" method="post" id="fdeposit">
+                                        @csrf
 
                                         <div class="form-group mt-2">
                                             <label class="bmd-label-floating">Amount</label>
