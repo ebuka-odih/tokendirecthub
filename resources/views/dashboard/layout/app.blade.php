@@ -123,10 +123,7 @@
             <div class="main-sidebar-header main-container-1 active">
                 <div class="sidemenu-logo">
                     <a class="main-logo" href="{{ route('user.dashboard') }}">
-{{--                        <h3 style="font-weight: bolder; color: #0a53be">{{ env('APP_NAME') }}</h3>--}}
-{{--                        <img src="../logo.png" class="header-brand-img desktop-logo-dark" alt="logo">--}}
-{{--                        <img src="../main/assets/img/brand/icon-light.png" class="header-brand-img icon-logo-dark" alt="logo">--}}
-                        <img src=".{{ asset('img/logo.png') }}" class="header-brand-img " alt="logo">
+                   <img src=".{{ asset('img2/logo.png') }}" class="header-brand-img icon-logo" alt="logo">
 {{--                        <img src="../main/assets/img/brand/icon.png" class="header-brand-img icon-logo" alt="logo">--}}
                     </a>
                 </div>
