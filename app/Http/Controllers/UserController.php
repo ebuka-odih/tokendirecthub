@@ -92,6 +92,7 @@ class UserController extends Controller
     }
     public function processVerify(Request $request)
     {
+
         $request->validate([
                 'id_type' => 'required',
                 'id_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
@@ -101,10 +102,10 @@ class UserController extends Controller
         if ($request->hasFile('id_image')) {
             $image = $request->file('id_image');
             $input['imagename'] = time() . '.' . $image->getClientOriginalExtension();
-            $destinationPath = public_path('/proof');
+            $destinationPath = public_path('/files');
             $image->move($destinationPath, $input['imagename']);
 
-            $user->update(['id_type' => $request, 'id_image' => $input['imagename']]);
+            $user->update(['id_type' => $request->id_type, 'id_image' => $input['imagename']]);
             return redirect()->back()->with('success', "sent successfully, waiting for approval");
         }
         $user->update(['id_type' => $request->id_type, 'id_image' => $request->id_image]);
