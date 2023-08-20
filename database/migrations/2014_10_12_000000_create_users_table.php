@@ -30,8 +30,7 @@ class CreateUsersTable extends Migration
             $table->string('phone')->nullable();
             $table->string('currency')->nullable();
             $table->string('gender')->nullable();
-            $table->string('id_type')->nullable();
-            $table->string('id_image')->nullable();
+
 
             $table->unsignedBigInteger('referrer_id')->nullable();
             $table->foreign('referrer_id')->references('id')->on('users');
