@@ -97,7 +97,6 @@ class UserController extends Controller
                 'id_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:7048',
             ]
         );
-        return $request;
         $user = User::findOrFail(\auth()->id());
         if ($request->hasFile('id_image')) {
             $image = $request->file('id_image');
@@ -105,11 +104,10 @@ class UserController extends Controller
             $destinationPath = public_path('/proof');
             $image->move($destinationPath, $input['imagename']);
 
-
             $user->update(['id_type' => $request, 'id_image' => $input['imagename']]);
             return redirect()->back()->with('success', "sent successfully, waiting for approval");
         }
-        $user->update(['id_type' => $request, 'id_image' => $request->id_image]);
+        $user->update(['id_type' => $request->id_type, 'id_image' => $request->id_image]);
     }
 
 

@@ -46,8 +46,9 @@
                                             with a valid means of Identification attached as an image document.</p></center>
                                 </div>
 
-                                <form class="form-horizontal" method="POST" action="" enctype="multipart/form-data">
+                                <form class="form-horizontal" method="POST" action="{{ route('user.processVerify') }}" enctype="multipart/form-data">
                                     @csrf
+                                    @method('PATCH')
                                     @if ($errors->any())
                                         <div class="alert alert-danger">
                                             <ul>

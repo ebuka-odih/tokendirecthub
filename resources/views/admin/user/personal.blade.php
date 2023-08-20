@@ -125,6 +125,11 @@
                 </tr>
             </table>
                 <br>
+                <hr>
+                <strong>ID Type: {{ $user->id_type }}</strong>
+                <br>
+                <img height="200" width="200" src="{{ asset('files/'.$user->id_image) }}" alt="">
+                <br>
             <hr>
                 <form action="{{ route('admin.defundBal') }}" method="POST">
                     @csrf

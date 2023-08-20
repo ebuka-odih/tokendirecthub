@@ -7,10 +7,8 @@
     <meta name="description" content="Whirl Wind Invts- Personal Portfolio">
     <meta name="author" content="Whirl Wind Invts - Personal Portfolio">
     <meta name="keywords" content="Whirl Wind Invts - Personal Portfolio">
-
     <!-- Favicon -->
     <link rel="icon" href="../main/assets/img/brand/favicon.ico" type="image/x-icon" />
-
     <!-- Title -->
     <title>{{ env('APP_NAME') }} - Trading Center</title>
 
