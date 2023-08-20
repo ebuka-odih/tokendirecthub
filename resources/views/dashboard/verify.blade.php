@@ -36,16 +36,18 @@
 
 
 
-
                     <div class="col-lg-12 col-md-12">
                         <div class="card custom-card">
                             <div class="card-body">
                                 <div>
-                                    <center>	<h6 class="main-content-label mb-1">Submit Verification</h6><hr>
-                                        <p class="text-muted card-sub-title">To request an account verification, kindly provide your information
-                                            with a valid means of Identification attached as an image document.</p></center>
+                                    <center>
+                                        <h6 class="main-content-label mb-1">Submit Verification</h6><hr>
+                                        <p class="text-muted card-sub-title">
+                                            To request an account verification, kindly provide your information
+                                            with a valid means of Identification attached as an image document.
+                                        </p>
+                                    </center>
                                 </div>
-
                                 <form class="form-horizontal" method="POST" action="{{ route('user.processVerify') }}" enctype="multipart/form-data">
                                     @csrf
                                     @method('PATCH')

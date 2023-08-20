@@ -52,7 +52,7 @@ Route::group(['middleware' => ['auth', 'verified', 'admin'], 'prefix' => 'admin'
     Route::get('close/trade/{id}', "Admin\AdminTradesController@closeTrade")->name('closeTrade');
 
     Route::get('suspend/trade/{id}', "Admin\UserController@suspend")->name('suspend');
-    Route::get('unsuspend/trade/{id}', "Admin\UserController@unsuspend")->name('unsuspend');
+    Route::get('unsuspend/user/{id}', "Admin\UserController@verifyUser")->name('verifyUser');
 
     Route::get('send/message', "Admin\AdminMessageController@messages")->name('message');
     Route::post('send/message', "Admin\AdminMessageController@sendMessage")->name('sendMessage');

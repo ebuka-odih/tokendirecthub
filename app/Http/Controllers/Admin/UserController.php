@@ -45,11 +45,12 @@ class UserController extends Controller
         $user->save();
         return redirect()->back()->with('suspend', "Account Has Been Suspended");
     }
-    public function unsuspend($id)
+    public function verifyUser($id)
     {
         $user = User::findOrFail($id);
         $user->status = 1;
         $user->save();
         return redirect()->back()->with('unsuspend', "Account Has Been Unsuspended");
     }
+
 }

@@ -56,7 +56,9 @@
                                            <a href="{{ route('admin.userDetails', $item->id) }}" class="btn btn-sm btn-alt-secondary js-bs-tooltip-enabled" data-bs-toggle="tooltip" title="" data-bs-original-title="Edit">
                                                <i class="fa fa-eye"></i>
                                            </a>
-
+                                           <a href="{{ route('admin.verifyUser', $item->id) }}" class="btn btn-sm btn-alt-secondary" >
+                                               <i class="fa fa-check"></i>
+                                           </a>
                                            <form method="POST" action="{!! route('admin.deleteUser', $item->id) !!}" accept-charset="UTF-8">
                                                <input name="_method" value="DELETE" type="hidden">
                                                {{ csrf_field() }}
