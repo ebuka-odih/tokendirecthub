@@ -70,8 +70,6 @@
                                     @endif
 
                                     <input type="hidden" name="subscription_id" value="{{ $item->id }}">
-
-
                                     <div class="form-group text-start">
                                         <label class="tx-medium">Amount</label>
                                         <input class="form-control" name="amount" placeholder="1000" type="text" required="">

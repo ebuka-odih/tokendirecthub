@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Mail\VerifyUserEmail;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -48,8 +50,9 @@ class UserController extends Controller
     public function verifyUser($id)
     {
         $user = User::findOrFail($id);
-        $user->status = 1;
+        $user->status = 2;
         $user->save();
+        Mail::to($user->email)->send(new VerifyUserEmail($user));
         return redirect()->back()->with('unsuspend', "Account Has Been Unsuspended");
     }
 

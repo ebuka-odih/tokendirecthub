@@ -75,18 +75,19 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function status()
     {
-        if ($this->status == 0){
-            return "<span class='badge bg-danger'>Suspend</span>";
-        }elseif ($this->status > 0){
-            return "<span class='badge bg-success'>Unsuspend</span>";
+        if ($this->status == 1){
+            return "<span class='badge bg-danger'>Unverified</span>";
+        }elseif ($this->status > 1){
+            return "<span class='badge bg-success'>Verified</span>";
         }else{
             return "<span class='badge bg-warning text text-uppercase'>Blocked</span>";
         }
     }
 
+
     public function withdrawal()
     {
-        return $this->hasMany(Withdrawal::class, 'user_id');
+        return $this->hasMany(Withdraw::class, 'user_id');
     }
     public function deposit()
     {

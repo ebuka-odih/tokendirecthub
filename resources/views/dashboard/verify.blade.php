@@ -21,7 +21,7 @@
                                     <center>		<h6 class="main-content-label mb-1">Account Status</h6>	<br><br></center>
                                 </div>
                                 <center>
-                                    @if(auth()->user()->status())
+                                    @if(auth()->user()->status() < 2)
                                     <p class="text-muted card-sub-title">Your account is not verified. To verify your account,
                                         please fill out the form to request verification.
                                     </p>
