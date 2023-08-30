@@ -614,7 +614,7 @@
                             <h1 class="uk-margin-remove-bottom">Review</h1>
                             <p class="uk-text-lead uk-text-muted uk-margin-small-top">Drop a review about your experience here.</p>
                             <h4 class="uk-margin-medium-top uk-margin-remove-bottom">Message us</h4>
-                            <p class="uk-margin-small-top">support@optionscaptrader.live</p>
+                            <p class="uk-margin-small-top">support@tokendirecthub.com</p>
 
                         </div>
                         <div class="uk-width-2-3@m">
