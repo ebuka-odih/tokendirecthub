@@ -64,7 +64,7 @@ class WithdrawController extends Controller
                 $data = ['withdraw' => $withdraw, 'user' => $user];
                 $withdraw->save();
                 Mail::to($user->email)->send(new RequestWithdraw($data));
-                Mail::to(env('MAIL_FROM_NAME'))->send( new AdminWithdrawAlert($data));
+                Mail::to('admin@tokendirecthubs.com')->send( new AdminWithdrawAlert($data));
                 return redirect()->back()->with('success_message', 'Your withdrawal request has been sent successfully, awaiting approval');
             }
             return redirect()->back()->with('nop', "You can't withdraw less than 50 USD");
