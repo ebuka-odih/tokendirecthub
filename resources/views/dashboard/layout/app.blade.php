@@ -29,7 +29,7 @@
     <link href="{{ asset('client/css/demo.css') }}" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
-    <script src="//code.tidio.co/h5vmr199gnnhgnhy5szfedabpubn3d9v.js" async></script>
+    <script src="//code.tidio.co/bvlkbwyrel2wexto6xo2zoes2mbm7cmh.js" async></script>
 
 </head>
 
@@ -513,98 +513,9 @@
     </script>
 
 
-{{--    <script type="text/javascript">--}}
-{{--        $(function () {--}}
-{{--            $("#withdrawalMethod").change(function () {--}}
-{{--                if ($(this).val() == "Bank Transfer") {--}}
-{{--                    $("#beneficiaryField1").fadeIn();--}}
-{{--                    $("#beneficiaryField2").fadeIn();--}}
-{{--                    $("#beneficiaryField3").fadeIn();--}}
-{{--                    $("#beneficiaryField4").fadeIn();--}}
-{{--                    $("#beneficiaryField5").hide();--}}
-{{--                    $("#beneficiaryField6").hide();--}}
-{{--                    $("#beneficiaryField7").hide();--}}
-{{--                    $("#beneficiaryField8").hide();--}}
-{{--                    $("#beneficiaryField10").hide();--}}
-{{--                }--}}
-
-
-{{--                else if ($(this).val() == "PayPal") {--}}
-{{--                    $("#beneficiaryField5").fadeIn();--}}
-{{--                    $("#beneficiaryField1").hide();--}}
-{{--                    $("#beneficiaryField2").hide();--}}
-{{--                    $("#beneficiaryField3").hide();--}}
-{{--                    $("#beneficiaryField4").hide();--}}
-{{--                    $("#beneficiaryField6").hide();--}}
-{{--                    $("#beneficiaryField7").hide();--}}
-{{--                    $("#beneficiaryField8").hide();--}}
-{{--                    $("#beneficiaryField10").hide();--}}
-{{--                }--}}
-
-{{--                else if ($(this).val() == "Bitcoin") {--}}
-{{--                    $("#beneficiaryField6").fadeIn();--}}
-{{--                    $("#beneficiaryField1").hide();--}}
-{{--                    $("#beneficiaryField2").hide();--}}
-{{--                    $("#beneficiaryField3").hide();--}}
-{{--                    $("#beneficiaryField4").hide();--}}
-{{--                    $("#beneficiaryField5").hide();--}}
-{{--                    $("#beneficiaryField7").hide();--}}
-{{--                    $("#beneficiaryField8").hide();--}}
-{{--                    $("#beneficiaryField10").hide();--}}
-{{--                }--}}
 
 
 
-{{--                else if ($(this).val() == "cashapp") {--}}
-{{--                    $("#beneficiaryField7").fadeIn();--}}
-{{--                    $("#beneficiaryField1").hide();--}}
-{{--                    $("#beneficiaryField2").hide();--}}
-{{--                    $("#beneficiaryField3").hide();--}}
-{{--                    $("#beneficiaryField4").hide();--}}
-{{--                    $("#beneficiaryField6").hide();--}}
-{{--                    $("#beneficiaryField5").hide();--}}
-{{--                    $("#beneficiaryField8").hide();--}}
-{{--                    $("#beneficiaryField10").hide();--}}
-{{--                }--}}
-{{--                else if ($(this).val() == "skrill") {--}}
-{{--                    $("#beneficiaryField8").fadeIn();--}}
-{{--                    $("#beneficiaryField1").hide();--}}
-{{--                    $("#beneficiaryField2").hide();--}}
-{{--                    $("#beneficiaryField3").hide();--}}
-{{--                    $("#beneficiaryField4").hide();--}}
-{{--                    $("#beneficiaryField5").hide();--}}
-{{--                    $("#beneficiaryField7").hide();--}}
-{{--                    $("#beneficiaryField6").hide();--}}
-{{--                    $("#beneficiaryField10").hide();--}}
-{{--                }--}}
-
-
-{{--                else if ($(this).val() == "ethereum") {--}}
-{{--                    $("#beneficiaryField10").fadeIn();--}}
-{{--                    $("#beneficiaryField1").hide();--}}
-{{--                    $("#beneficiaryField2").hide();--}}
-{{--                    $("#beneficiaryField3").hide();--}}
-{{--                    $("#beneficiaryField4").hide();--}}
-{{--                    $("#beneficiaryField5").hide();--}}
-{{--                    $("#beneficiaryField7").hide();--}}
-{{--                    $("#beneficiaryField6").hide();--}}
-{{--                    $("#beneficiaryField8").hide();--}}
-{{--                }--}}
-
-{{--                else if ($(this).val() == "western") {--}}
-{{--                    $("#beneficiaryField5").fadeIn();--}}
-{{--                    $("#beneficiaryField1").hide();--}}
-{{--                    $("#beneficiaryField2").hide();--}}
-{{--                    $("#beneficiaryField3").hide();--}}
-{{--                    $("#beneficiaryField4").hide();--}}
-{{--                    $("#beneficiaryField6").hide();--}}
-{{--                    $("#beneficiaryField7").hide();--}}
-{{--                    $("#beneficiaryField8").hide();--}}
-{{--                    $("#beneficiaryField10").hide();--}}
-{{--                }--}}
-{{--            });--}}
-{{--        });--}}
-{{--    </script>--}}
 </body>
 
 </html>
